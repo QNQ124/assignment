@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "Image_class.h"
+#include "Image_class.h"  
 using namespace std;
 
 
@@ -9,7 +9,7 @@ int main(){
 
 
     for (int i = 0; i < f.width; ++i){
-        for (int j = 0; j < f.height; ++j){
+        for (int j = 0; j < f.height; ++j){ 
 
             unsigned int average = 0;
 
