@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
     int brightness = 0;
+    double factor = 0;
     string choice, filename;
     cout << "Please enter filename: ";
     getline(cin, filename);
@@ -31,13 +32,12 @@ int main() {
     // Adjust the brightness based on the user's choice
     if (choice == "1") {
         brightness = -1 * brightness;
+        factor = 1.11 + (brightness * 3 / 255.0);
     } else {
         // Lighten the image
         brightness = min(255, brightness);
+        factor = 1.11 + (brightness / 255.0);
     }
-
-    // Adjust the brightness
-    double factor = 1.0 + (brightness / 255.0);
     for (int i = 0; i < image.width; i++) {
         for (int j = 0; j < image.height; j++) {
             for (int k = 0; k < image.channels; k++) {
@@ -47,5 +47,5 @@ int main() {
         }
     }
     // Save the modified image
-    image.saveImage("brightened_image.jpg");
+    image.saveImage("new.jpg");
 }
