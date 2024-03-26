@@ -16,6 +16,7 @@
 #include "Image_Class.h"
 #include <fstream>
 #include <iostream>
+#include <windows.h>
 #define sv saveImage
 #define uint unsigned int
 #define gp getPixel
@@ -29,6 +30,38 @@ bool isValid(string filename){
         return true;
     else
         return false;
+}
+
+void saving_options()
+{
+    string path_choice;
+    cout << "|Select whether to save the file-|" << endl;
+    cout << "in the same path or a new one: --|" << endl;
+    cout << "1) Save in the same path---------|" << endl;
+    cout << "2) Save in a new path------------|" << endl;
+    cout << "|--------------------------------|" << endl;
+    cout << "enter your choice: " ;
+    getline(cin,path_choice);
+    cout << endl;
+    while ( stoi (path_choice) != 1 && stoi (path_choice) != 2)
+    {
+        cout << "invalid input, please your choice (1,2) : ";
+        cin >> path_choice;
+        cout << endl;
+    }
+    if ( stoi (path_choice) == 2)
+    {
+        string new_filepath;
+        cout << "Please enter the new file path: ";
+        getline(cin,new_filepath);
+        cout << endl;
+        while (!SetCurrentDirectory(new_filepath.c_str()))
+        {
+            cout << "\n---- Directory does not exist ----\n";
+            cout << "Please enter the name of new file path: ";
+            getline(cin, new_filepath);
+        }
+    }
 }
 
 int Display_Menu2(){
@@ -55,9 +88,9 @@ int Display_Menu2(){
     }
 
     if (choice == "4") {
-        cout << "\n---------------------------\n"
-             << " Thank you for our Program\n"
-             << "---------------------------\n";
+        cout << "\n-------------------------------\n"
+             << " Thank you for using our Program\n"
+             << "-------------------------------\n";
     }
     return stoi(choice);
 }
@@ -94,13 +127,14 @@ int GrayScale_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        saving_options();
         while(true){
            if(!isValid(new_filename)) {
                image.sv(new_filename);
                break;
            }
            else {
-               cout << "\n---- File is already exist ----\n";
+               cout << "\n---- File does already exist ----\n";
                cout << "Please enter name of new file: ";
                getline(cin, new_filename);
            }
@@ -159,6 +193,7 @@ int Black_White_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        saving_options();
         while(true){
             if(!isValid(new_filename)) {
                 image.sv(new_filename);
@@ -204,6 +239,7 @@ int Invert_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        saving_options();
         while(true){
             if(!isValid(new_filename)) {
                 image.sv(new_filename);
@@ -298,6 +334,7 @@ int Rotate_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        saving_options();
         while(true){
             if(!isValid(new_filename)) {
                 if(degree_rotation=="180")
@@ -389,6 +426,7 @@ int Flip_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        saving_options();
         while(true){
             if(!isValid(new_filename)) {
                 image.sv(new_filename);
@@ -435,7 +473,7 @@ void Display_Menu1(){
             if (isValid(filename)) {
                 break;
             } else {
-                cout << "\n----- File is not exist -----\n";
+                cout << "\n----- File does not exist -----\n";
                 cout << "Please enter your file path: ";
                 getline(cin, filename);
             }
