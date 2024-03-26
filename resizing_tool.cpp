@@ -19,7 +19,7 @@ int main()
 
     Image new_image(new_width,new_height);
 
-    
+
 
     const float SCALING_CONST_W = (float)image.width/(float)new_width ;
     const float SCALING_CONST_H = (float)image.height/(float)new_height;
