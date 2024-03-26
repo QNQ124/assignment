@@ -52,16 +52,18 @@ void saving_options()
     if ( stoi (path_choice) == 2)
     {
         string new_filepath;
-        cout << "Please enter the new file path: ";
+        cout << "Please enter the new directory path: ";
         getline(cin,new_filepath);
         cout << endl;
         while (!SetCurrentDirectory(new_filepath.c_str()))
         {
             cout << "\n---- Directory does not exist ----\n";
-            cout << "Please enter the name of new file path: ";
+            cout << "Please enter the new Directory path: ";
             getline(cin, new_filepath);
+            cout << endl;
         }
     }
+
 }
 
 int Display_Menu2(){
@@ -127,6 +129,9 @@ int GrayScale_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        char buffer[MAX_PATH];
+        GetCurrentDirectory(MAX_PATH, buffer);
+        string old_dir(buffer);
         saving_options();
         while(true){
            if(!isValid(new_filename)) {
@@ -139,6 +144,7 @@ int GrayScale_Image(string filename)
                getline(cin, new_filename);
            }
         }
+        SetCurrentDirectory(old_dir.c_str());
     }
     return choice;
 }
@@ -193,7 +199,11 @@ int Black_White_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        char buffer[MAX_PATH];
+        GetCurrentDirectory(MAX_PATH, buffer);
+        string old_dir(buffer);
         saving_options();
+
         while(true){
             if(!isValid(new_filename)) {
                 image.sv(new_filename);
@@ -205,6 +215,7 @@ int Black_White_Image(string filename)
                 getline(cin, new_filename);
             }
         }
+        SetCurrentDirectory(old_dir.c_str());
     }
     return choice;
 }
@@ -239,6 +250,9 @@ int Invert_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        char buffer[MAX_PATH];
+        GetCurrentDirectory(MAX_PATH, buffer);
+        string old_dir(buffer);
         saving_options();
         while(true){
             if(!isValid(new_filename)) {
@@ -251,6 +265,7 @@ int Invert_Image(string filename)
                 getline(cin, new_filename);
             }
         }
+        SetCurrentDirectory(old_dir.c_str());
     }
     return choice;
 }
@@ -334,6 +349,9 @@ int Rotate_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        char buffer[MAX_PATH];
+        GetCurrentDirectory(MAX_PATH, buffer);
+        string old_dir(buffer);
         saving_options();
         while(true){
             if(!isValid(new_filename)) {
@@ -350,7 +368,7 @@ int Rotate_Image(string filename)
                 cout << "Please enter name of new file: ";
                 getline(cin, new_filename);
             }
-        }
+        }SetCurrentDirectory(old_dir.c_str());
     }
     return choice;
 }
@@ -426,6 +444,9 @@ int Flip_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
+        char buffer[MAX_PATH];
+        GetCurrentDirectory(MAX_PATH, buffer);
+        string old_dir(buffer);
         saving_options();
         while(true){
             if(!isValid(new_filename)) {
@@ -438,6 +459,7 @@ int Flip_Image(string filename)
                 getline(cin, new_filename);
             }
         }
+        SetCurrentDirectory(old_dir.c_str());
     }
     return choice;
 }
