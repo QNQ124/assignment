@@ -7,7 +7,7 @@
 //          Ezz eldin Omar Abdellatif_S6_20230233    => Filter 3, 6
 // Emails:  hes93314@gmail.com
 //          hzrdu3500@gmail.com
-//          ezzeldinomar@gmail.com
+//          ezzeldinomar7@gmail.com
 // TA name: Rana Abdelkader
 // Date:    3/15/2024
 // Version: 3.0
