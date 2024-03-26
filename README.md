@@ -1,6 +1,6 @@
 # Baby Photoshop
 -Created by--
-Qnq && HaZarDo0o && Ezzeldin
+Qnq && HaZrDoOo0 && Ezzeldin
 
 ## Main Filters
 1) => GrayScale image
