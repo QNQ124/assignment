@@ -10,7 +10,7 @@
 //
 // Author:  Ibrahim Mohamed Saad Mohamed_S6_20230003 => Filter 1
 //          Ahmed Hussein Mohamed Ahmed_S5_20230016  => Filter 2, 5
-//          Ezz eldin Omar Abd El_latif_S6_20230233  => Filter 3, 6
+//          Ezz eldin Omar Abd El-latif_S6_20230233  => Filter 3, 6
 //
 // Emails:  hes93314@gmail.com
 //          hzrdu3500@gmail.com
