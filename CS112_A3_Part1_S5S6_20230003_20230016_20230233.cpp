@@ -10,7 +10,7 @@
 //
 // Author:  Ibrahim Mohamed Saad Mohamed_S6_20230003 => Filter 1
 //          Ahmed Hussein Mohamed Ahmed_S5_20230016  => Filter 2, 5
-//          Ezz eldin Omar Abd El_latif_S6_20230233  => Filter 3, 6
+//          Ezz eldin Omar Abd El-latif_S6_20230233  => Filter 3, 6
 //
 // Emails:  hes93314@gmail.com
 //          hzrdu3500@gmail.com
@@ -45,7 +45,7 @@ bool isValid(string filename){
         return false; // File does not exist or cannot be opened
 }
 
-// convert each character to uppercase in message and keyword
+// convert each character to uppercase in file name to exit choice
 string to_upper(string input){
     for (auto &i : input) {
         if(isalpha(i) && islower(i)) i = toupper(i);
@@ -579,7 +579,7 @@ void Display_Menu1(){
 
     int chance = 0;
     string filename, choice1;
-
+    bool flag = false;
     // Main loop for the menu
     while (true){
 
@@ -614,11 +614,21 @@ void Display_Menu1(){
             if (isValid(filename)) {
                 break; // Exit the loop if the file exists
             } else {
-                cout << "\n---- File doesn't exist ----\n";
-                cout << "Please enter your file path: ";
+                cout << "\n---------------- File doesn't exist ----------------\n";
+                cout << "Please enter your file path or exit (by enter exit): ";
                 getline(cin, filename);
+
+                if (to_upper(filename) == "EXIT") {
+                    cout << "\n---------------------------------\n"
+                         << " Thank you for using our Program\n"
+                         << "---------------------------------\n";
+                    flag = true;
+                    break;
+                }
             }
         }
+        if(flag)
+            break;
 
         // Display the filter menu
         cout << "\n|------ What do you want to do ? -----|\n"
