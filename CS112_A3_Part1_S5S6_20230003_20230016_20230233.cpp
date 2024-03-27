@@ -46,8 +46,8 @@ bool isValid(string filename){
 
 // convert each character to uppercase in message and keyword
 string to_upper(string input){
-    for (auto i : input) {
-        if(isalpha(i) && islower(i)) i = char((int(i) - 32));
+    for (auto &i : input) {
+        if(isalpha(i) && islower(i)) i = toupper(i);
         else continue;
 
     }
