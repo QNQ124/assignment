@@ -134,6 +134,7 @@ int GrayScale_Image(string filename)
 
     // Display the menu and return the user's choice
     int choice = Display_Menu2();
+    bool flag = false;
     if (choice == 1) {
         cout << endl;
         return 0;
@@ -150,7 +151,6 @@ int GrayScale_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
-        saving_options();
         int size = new_filename.size();
         while (true) {
             if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {
@@ -161,8 +161,7 @@ int GrayScale_Image(string filename)
                 cout << endl;
             }
             else if (!isValid(new_filename)) {
-                image.sv(new_filename);
-                cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+                flag = true;
                 break;
             }
             else {
@@ -173,7 +172,11 @@ int GrayScale_Image(string filename)
                 cout << endl;
             }
         }
-
+        if(flag){
+            saving_options();
+            image.sv(new_filename);
+            cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+        }
         // Restore the current directory
         SetCurrentDirectory(old_dir.c_str());
     }
@@ -206,6 +209,7 @@ int Black_White_Image(string filename)
 
     // Display the menu and return the user's choice
     int choice = Display_Menu2();
+    bool flag = false;
     if (choice == 1) {
         cout << endl;
         return 0;
@@ -222,18 +226,17 @@ int Black_White_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
-        saving_options();
         int size = new_filename.size();
         while (true) {
-            if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {                cout << "--- Wrong in file extension ---\n";
+            if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {
+                cout << "--- Wrong in file extension ---\n";
                 cout << "Please enter name of new file: ";
                 getline(cin, new_filename);
                 size = new_filename.size();
                 cout << endl;
             }
             else if (!isValid(new_filename)) {
-                image.sv(new_filename);
-                cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+                flag = true;
                 break;
             }
             else {
@@ -244,7 +247,11 @@ int Black_White_Image(string filename)
                 cout << endl;
             }
         }
-
+        if(flag){
+            saving_options();
+            image.sv(new_filename);
+            cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+        }
         // Restore the current directory
         SetCurrentDirectory(old_dir.c_str());
     }
@@ -277,6 +284,7 @@ int Invert_Image(string filename)
 
     // Display the menu and return the user's choice
     int choice = Display_Menu2();
+    bool flag = false;
     if(choice == 1) {
         cout << endl;
         return 0;
@@ -293,18 +301,17 @@ int Invert_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
-        saving_options();
         int size = new_filename.size();
         while (true) {
-            if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {                cout << "--- Wrong in file extension ---\n";
+            if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {
+                cout << "--- Wrong in file extension ---\n";
                 cout << "Please enter name of new file: ";
                 getline(cin, new_filename);
                 size = new_filename.size();
                 cout << endl;
             }
             else if(!isValid(new_filename)) {
-                image.sv(new_filename);
-                cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+                flag = true;
                 break;
             }
             else {
@@ -314,6 +321,11 @@ int Invert_Image(string filename)
                 size = new_filename.size();
                 cout << endl;
             }
+        }
+        if(flag){
+            saving_options();
+            image.sv(new_filename);
+            cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
         }
         // Restore the current directory
         SetCurrentDirectory(old_dir.c_str());
@@ -388,6 +400,7 @@ int Rotate_Image(string filename)
 
     cin.ignore(); // Clear input buffer
     int choice = Display_Menu2(); // Display a menu for further actions
+    bool flag = false;
     if(choice == 1) {
         cout << endl;
         return 0; // Exit the function
@@ -408,24 +421,17 @@ int Rotate_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
-        saving_options();
         int size = new_filename.size();
         while (true) {
-            if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {                cout << "--- Wrong in file extension ---\n";
+            if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {
+                cout << "--- Wrong in file extension ---\n";
                 cout << "Please enter name of new file: ";
                 getline(cin, new_filename);
                 size = new_filename.size();
                 cout << endl;
             }
             else if(!isValid(new_filename)) { // Check if the new filename is valid
-                if(degree_rotation == "180")
-                    new_photo_180.sv(new_filename); // Save the rotated image with the new filename
-                else if(degree_rotation == "270")
-                    new_photo_270.sv(new_filename);
-                else
-                    new_photo_90.sv(new_filename);
-
-                cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+                flag = true;
                 break;
             }
             else {
@@ -435,6 +441,17 @@ int Rotate_Image(string filename)
                 size = new_filename.size();
                 cout << endl;
             }
+        }
+        if(flag){
+            saving_options();
+            if(degree_rotation == "180")
+                new_photo_180.sv(new_filename); // Save the rotated image with the new filename
+            else if(degree_rotation == "270")
+                new_photo_270.sv(new_filename);
+            else
+                new_photo_90.sv(new_filename);
+
+            cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
         }
         SetCurrentDirectory(old_dir.c_str()); // Restore the old directory
     }
@@ -506,7 +523,7 @@ int Flip_Image(string filename)
     }
 
     int choice = Display_Menu2(); // Display a menu for further actions
-
+    bool flag = false;
     // Handle user's choice
     if(choice == 1) {
         cout << endl;
@@ -523,18 +540,17 @@ int Flip_Image(string filename)
         cout << "Please enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
-        saving_options();
         int size = new_filename.size();
         while (true) {
-            if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {                cout << "--- Wrong in file extension ---\n";
+            if ((size < 5 || (new_filename.substr(size - 3, size) != "jpg" && new_filename.substr(size - 3, size) != "bmp" && new_filename.substr(size - 3, size) != "png")) && (size < 6 || (new_filename.substr(size - 4, size) != "jpeg"))) {
+                cout << "--- Wrong in file extension ---\n";
                 cout << "Please enter name of new file: ";
                 getline(cin, new_filename);
                 size = new_filename.size();
                 cout << endl;
             }
             else if(!isValid(new_filename)) { // Check if the new filename is valid
-                image.sv(new_filename); // Save the flipped image with the new filename
-                cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+                flag = true;
                 break;
             }
             else {
@@ -545,9 +561,13 @@ int Flip_Image(string filename)
                 cout << endl;
             }
         }
+        if(flag){
+            saving_options();
+            image.sv(new_filename);
+            cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+        }
         SetCurrentDirectory(old_dir.c_str()); // Restore the old directory
     }
-
     return choice; // Return the user's choice from the menu
 }
 
