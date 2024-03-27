@@ -10,7 +10,7 @@
 //
 // Author:  Ibrahim Mohamed Saad Mohamed_S6_20230003 => Filter 1
 //          Ahmed Hussein Mohamed Ahmed_S5_20230016  => Filter 2, 5
-//          Ezz eldin Omar Abd El-latif_S6_20230233  => Filter 3, 6
+//          Ezz eldin Omar Abd El_latif_S6_20230233  => Filter 3, 6
 //
 // Emails:  hes93314@gmail.com
 //          hzrdu3500@gmail.com
@@ -27,6 +27,7 @@
 #include <fstream>        // Input/output stream class to operate on files.
 #include <windows.h>      // For Windows-specific functions like SetCurrentDirectory
 #include <filesystem>     // For filesystem operations
+#include <stdio.h>        // I am using for delete temporary_file if user chosen apply a filter
 #define sv saveImage      // Define a shorthand for saveImage method
 #define uint unsigned int // Define uint as an alias for unsigned int
 #define gp getPixel       // Define a shorthand for getPixel method
@@ -584,14 +585,17 @@ void Display_Menu1(){
 
         // Prompt the user for the file path
         if(chance == 0 || chance == 1){
+            remove("temporary_file.jpg");
             cout << "Please enter your file path or exit (by enter exit): ";
             getline(cin, filename);
         }
         else if(chance == 3){
             chance = 0;
+            remove("temporary_file.jpg");
             continue; // Continue to the next iteration of the loop
         }
         else if(chance == 4){
+            remove("temporary_file.jpg");
             break; // Exit the loop
         }
         else {
