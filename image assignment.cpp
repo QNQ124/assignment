@@ -3,16 +3,16 @@
 #include <cmath>
 #include "Image_Class.h"
 #include <vector>
-#include <omp.h>
 using namespace std;
 
 void Inverted_Image()
 {
     string file_name , Newfile_name;
-    cout<<"Please enter the file name: "<<endl;
-    cin>>file_name;
-    cout<<"Please enter the NEW file name: "<<endl;
-    cin>>Newfile_name;
+
+    cout << "Please enter the file name: " << endl;
+    getline(cin,file_name);
+    cout << "Please enter the NEW file name: " << endl;
+    getline(cin,Newfile_name);
 
 
     Image photo(file_name); // Assuming Image class constructor takes a filename
@@ -37,9 +37,9 @@ void Blur_image()
     string file_name, Newfile_name;
 
     cout << "Please enter the file name: " << endl;
-    cin >> file_name;
+    getline(cin,file_name);
     cout << "Please enter the NEW file name: " << endl;
-    cin >> Newfile_name;
+    getline(cin,Newfile_name);
 
     Image photo(file_name);
     int width = photo.width;
@@ -106,10 +106,12 @@ void rotate_image()
 {
     string file_name , Newfile_name;
     string degree_rotation;
-    cout<<"Please enter the file name: "<<endl;
-    cin>>file_name;
-    cout<<"Please enter the NEW file name: "<<endl;
-    cin>>Newfile_name;
+
+    cout << "Please enter the file name: " << endl;
+    getline(cin,file_name);
+    cout << "Please enter the NEW file name: " << endl;
+    getline(cin,Newfile_name);
+
     cout<<"Please enter the degree_rotation(90 or 270 or 180): "<<endl;
     cin>>degree_rotation;
 
@@ -173,6 +175,7 @@ void rotate_image()
     }
 }
 
+
 string upper_case(string m) // function that converts string to uperr case
 {
     for(char& c : m)
@@ -182,74 +185,6 @@ string upper_case(string m) // function that converts string to uperr case
     return m;
 }
 
-//void addRoyalFrameCorners(Image& framed_photo, int frame_size) {
-//    // Define the size of corner decorations
-//    int corner_size = 40; // Adjust size as needed
-//
-//    // Iterate over each corner to draw the royal frame decoration
-//    for (int i = 0; i < corner_size; ++i) {
-//        for (int j = 0; j < corner_size; ++j) {
-//            // Top-left corner
-//            if (i < frame_size && j < frame_size) {
-//                framed_photo(j, i, 0) = 0; // Red
-//                framed_photo(j, i, 1) = 0; // Green
-//                framed_photo(j, i, 2) = 0; // Blue
-//            }
-//
-//            // Top-right corner
-//            if (i < frame_size && j < frame_size) {
-//                framed_photo(framed_photo.width - frame_size + j, i, 0) = 0; // Red
-//                framed_photo(framed_photo.width - frame_size + j, i, 1) = 0; // Green
-//                framed_photo(framed_photo.width - frame_size + j, i, 2) = 0; // Blue
-//            }
-//
-//            // Bottom-left corner
-//            if (i < frame_size && j < frame_size) {
-//                framed_photo(j, framed_photo.height - frame_size + i, 0) = 0; // Red
-//                framed_photo(j, framed_photo.height - frame_size + i, 1) = 0; // Green
-//                framed_photo(j, framed_photo.height - frame_size + i, 2) = 0; // Blue
-//            }
-//
-//            // Bottom-right corner
-//            if (i < frame_size && j < frame_size) {
-//                framed_photo(framed_photo.width - frame_size + j, framed_photo.height - frame_size + i, 0) = 0; // Red
-//                framed_photo(framed_photo.width - frame_size + j, framed_photo.height - frame_size + i, 1) = 0; // Green
-//                framed_photo(framed_photo.width - frame_size + j, framed_photo.height - frame_size + i, 2) = 0; // Blue
-//            }
-//        }
-//    }
-//
-//    // Add more intricate designs to the corners (e.g., diagonal lines)
-//    for (int i = 0; i < corner_size; ++i) {
-//        // Top-left corner
-//        if (i < frame_size) {
-//            framed_photo(frame_size + i, frame_size - i, 0) = 0; // Red
-//            framed_photo(frame_size + i, frame_size - i, 1) = 0; // Green
-//            framed_photo(frame_size + i, frame_size - i, 2) = 0; // Blue
-//        }
-//
-//        // Top-right corner
-//        if (i < frame_size) {
-//            framed_photo(framed_photo.width - frame_size + i, frame_size - i, 0) = 0; // Red
-//            framed_photo(framed_photo.width - frame_size + i, frame_size - i, 1) = 0; // Green
-//            framed_photo(framed_photo.width - frame_size + i, frame_size - i, 2) = 0; // Blue
-//        }
-//
-//        // Bottom-left corner
-//        if (i < frame_size) {
-//            framed_photo(frame_size + i, framed_photo.height - frame_size + i, 0) = 0; // Red
-//            framed_photo(frame_size + i, framed_photo.height - frame_size + i, 1) = 0; // Green
-//            framed_photo(frame_size + i, framed_photo.height - frame_size + i, 2) = 0; // Blue
-//        }
-//
-//        // Bottom-right corner
-//        if (i < frame_size) {
-//            framed_photo(framed_photo.width - frame_size + i, framed_photo.height - frame_size + i, 0) = 0; // Red
-//            framed_photo(framed_photo.width - frame_size + i, framed_photo.height - frame_size + i, 1) = 0; // Green
-//            framed_photo(framed_photo.width - frame_size + i, framed_photo.height - frame_size + i, 2) = 0; // Blue
-//        }
-//    }
-//}
 
 void frame_to_image()
 {
@@ -257,10 +192,10 @@ void frame_to_image()
     string color;
 
     cout << "Please enter the file name: " << endl;
-    cin >> file_name;
+    getline(cin,file_name);
 
     cout << "Please enter the NEW file name: " << endl;
-    cin >> Newfile_name;
+    getline(cin,Newfile_name);
 
     cout << "Please enter the color of the frame (Black, White, Blue, Red, Green): " << endl;
     cin >> color;
@@ -273,66 +208,165 @@ void frame_to_image()
         color= upper_case(color);
     }
 
-    // Load the image
-    Image photo(file_name);
-
-    // Calculate frame size as a fraction of the smaller dimension of the image
-    int frame_size = min(photo.width, photo.height) / 20; // Adjust divisor (e.g., 20) for desired thickness
-
-    // Calculate frame dimensions
-    int frame_width = photo.width + 2 * frame_size;
-    int frame_height = photo.height + 2 * frame_size;
-
-    // Create framed photo with calculated frame dimensions
-    Image framed_photo(frame_width, frame_height);
-
-    // Set the frame color
-    for (int i = 0; i < framed_photo.width; i++) {
-        for (int j = 0; j < framed_photo.height; j++) {
-            if (i < frame_size || j < frame_size || i >= frame_width - frame_size || j >= frame_height - frame_size) {
-                if (color == "BLACK") {
-                    framed_photo(i, j, 0) = 0;
-                    framed_photo(i, j, 1) = 0;
-                    framed_photo(i, j, 2) = 0;
-                } else if (color == "RED") {
-                    framed_photo(i, j, 0) = 255;
-                    framed_photo(i, j, 1) = 0;
-                    framed_photo(i, j, 2) = 0;
-                } else if (color == "GREEN") {
-                    framed_photo(i, j, 0) = 0;
-                    framed_photo(i, j, 1) = 255;
-                    framed_photo(i, j, 2) = 0;
-                } else if (color == "BLUE") {
-                    framed_photo(i, j, 0) = 0;
-                    framed_photo(i, j, 1) = 0;
-                    framed_photo(i, j, 2) = 255;
-                } else if (color == "WHITE") {
-                    framed_photo(i, j, 0) = 255;
-                    framed_photo(i, j, 1) = 255;
-                    framed_photo(i, j, 2) = 255;
-                }
-            }
-        }
-    }
     string choice;
     cout<<"Do you want it fancy? (yes or no)"<<endl;
     cin>>choice;
     choice= upper_case(choice);
-//    if(choice=="YES")
-//    {
-//        addRoyalFrameCorners(framed_photo,frame_size);
-//    }
-    // Copy original image onto the frame
-    for (int i = 0; i < photo.width; i++) {
-        for (int j = 0; j < photo.height; j++) {
-            for (int k = 0; k < 3; k++) {
-                framed_photo(i + frame_size, j + frame_size, k) = photo(i, j, k);
-            }
-        }
+
+    while ( choice!="YES" && choice!="NO") {
+        cout << "Do you want it fancy? (yes or no)" << endl;
+        cin >> choice;
+        choice = upper_case(choice);
     }
 
-    // Save the framed photo
-    framed_photo.saveImage(Newfile_name);
+    // Load the image
+    Image photo(file_name);
+
+    if(choice=="NO")
+    {
+        // Calculate frame size as a fraction of the smaller dimension of the image
+        int frame_size = min(photo.width, photo.height) / 20; // Adjust divisor (e.g., 20) for desired thickness
+
+        // Calculate frame dimensions
+        int frame_width = photo.width + 2 * frame_size;
+        int frame_height = photo.height + 2 * frame_size;
+
+        // Create framed photo with calculated frame dimensions
+        Image framed_photo(frame_width, frame_height);
+
+        // Set the frame color
+        for (int i = 0; i < framed_photo.width; i++) {
+            for (int j = 0; j < framed_photo.height; j++) {
+                if (i < frame_size || j < frame_size || i >= frame_width - frame_size || j >= frame_height - frame_size)
+                {
+                    if (color == "BLACK") {
+                        framed_photo(i, j, 0) = 0;
+                        framed_photo(i, j, 1) = 0;
+                        framed_photo(i, j, 2) = 0;
+                    } else if (color == "RED") {
+                        framed_photo(i, j, 0) = 255;
+                        framed_photo(i, j, 1) = 0;
+                        framed_photo(i, j, 2) = 0;
+                    } else if (color == "GREEN") {
+                        framed_photo(i, j, 0) = 0;
+                        framed_photo(i, j, 1) = 255;
+                        framed_photo(i, j, 2) = 0;
+                    } else if (color == "BLUE") {
+                        framed_photo(i, j, 0) = 0;
+                        framed_photo(i, j, 1) = 0;
+                        framed_photo(i, j, 2) = 255;
+                    } else if (color == "WHITE") {
+                        framed_photo(i, j, 0) = 255;
+                        framed_photo(i, j, 1) = 255;
+                        framed_photo(i, j, 2) = 255;
+                    }
+                }
+            }
+        }
+
+        // Copy original image onto the frame
+        for (int i = 0; i < photo.width; i++) {
+            for (int j = 0; j < photo.height; j++) {
+                for (int k = 0; k < 3; k++) {
+                    framed_photo(i + frame_size, j + frame_size, k) = photo(i, j, k);
+                }
+            }
+        }
+
+        // Save the framed photo
+        framed_photo.saveImage(Newfile_name);
+    }
+    else {
+        // Calculate frame size as a fraction of the smaller dimension of the image
+        int frame_size = min(photo.width, photo.height) / 25; // Adjust divisor for desired thickness
+        int frame_width = photo.width + 2 * frame_size;
+        int frame_height = photo.height + 2 * frame_size;
+
+        // Create framed photo with calculated frame dimensions
+        Image framed_photo(frame_width, frame_height);
+
+        // Set the frame color
+        for (int i = 0; i < framed_photo.width; i++) {
+            for (int j = 0; j < framed_photo.height; j++) {
+                if (i < frame_size || j < frame_size || i >= frame_width - frame_size || j >= frame_height - frame_size) {
+                    if (color == "BLACK") {
+                        framed_photo(i, j, 0) = 0;
+                        framed_photo(i, j, 1) = 0;
+                        framed_photo(i, j, 2) = 0;
+                    } else if (color == "RED") {
+                        framed_photo(i, j, 0) = 255;
+                        framed_photo(i, j, 1) = 0;
+                        framed_photo(i, j, 2) = 0;
+                    } else if (color == "GREEN") {
+                        framed_photo(i, j, 0) = 0;
+                        framed_photo(i, j, 1) = 255;
+                        framed_photo(i, j, 2) = 0;
+                    } else if (color == "BLUE") {
+                        framed_photo(i, j, 0) = 0;
+                        framed_photo(i, j, 1) = 0;
+                        framed_photo(i, j, 2) = 255;
+                    } else if (color == "WHITE") {
+                        framed_photo(i, j, 0) = 255;
+                        framed_photo(i, j, 1) = 255;
+                        framed_photo(i, j, 2) = 255;
+                    }
+                }
+            }
+        }
+
+        // Copy original image onto the frame
+        for (int i = 0; i < photo.width; i++) {
+            for (int j = 0; j < photo.height; j++) {
+                for (int k = 0; k < 3; k++) {
+                    framed_photo(i + frame_size, j + frame_size, k) = photo(i, j, k);
+                }
+            }
+        }
+
+        // Add horizontal stripes with space in between
+        int space_between_stripes = 10; // Adjust as needed
+        for (int i = frame_size; i < frame_width - frame_size; i++)
+        {
+            // make sure that the stripes be in the specified range
+            // used to determine whether to add a gray stripe or a space.
+            if (i % (2 * space_between_stripes) < space_between_stripes)
+            {
+                for (int j = 0; j < frame_size; j++)
+                {
+                    // made the gray is a fixed color for fancy frame
+                    framed_photo(i, j, 0) = 128; // Red component   (top)
+                    framed_photo(i, j, 1) = 128; // Green component (top)
+                    framed_photo(i, j, 2) = 128; // Blue component  (top)
+                    framed_photo(i, frame_height - frame_size + j, 0) = 128; // Red component   (bottom)
+                    framed_photo(i, frame_height - frame_size + j, 1) = 128; // Green component (bottom)
+                    framed_photo(i, frame_height - frame_size + j, 2) = 128; // Blue component  (bottom)
+                }
+            }
+        }
+
+        // Add vertical stripes with space in between
+        for (int j = frame_size; j < frame_height - frame_size; j++)
+        {
+            // make sure that the stripes be in the specified range
+            // used to determine whether to add a gray stripe or a space.
+            if (j % (2 * space_between_stripes) < space_between_stripes)
+            {
+                for (int i = 0; i < frame_size; i++)
+                {
+                    // made the gray is a fixed color for fancy frame
+                    framed_photo(i, j, 0) = 128; // Red component
+                    framed_photo(i, j, 1) = 128; // Green component
+                    framed_photo(i, j, 2) = 128; // Blue component
+                    framed_photo(frame_width - frame_size + i, j, 0) = 128; // Red component (right)
+                    framed_photo(frame_width - frame_size + i, j, 1) = 128; // Green component (right)
+                    framed_photo(frame_width - frame_size + i, j, 2) = 128; // Blue component (right)
+                }
+            }
+        }
+
+        framed_photo.saveImage(Newfile_name);
+    }
+
 }
 
 void infrared_image()
@@ -341,10 +375,10 @@ void infrared_image()
     string color;
 
     cout << "Please enter the file name: " << endl;
-    cin >> file_name;
+    getline(cin,file_name);
 
     cout << "Please enter the NEW file name: " << endl;
-    cin >> Newfile_name;
+    getline(cin,Newfile_name);
 
     Image photo(file_name);
 
@@ -377,10 +411,10 @@ void purple_filter()
     string color;
 
     cout << "Please enter the file name: " << endl;
-    cin >> file_name;
+    getline(cin,file_name);
 
     cout << "Please enter the NEW file name: " << endl;
-    cin >> Newfile_name;
+    getline(cin,Newfile_name);
 
     Image photo(file_name);
 
@@ -417,6 +451,5 @@ void purple_filter()
 
 int main()
 {
-    purple_filter();
-
+    frame_to_image();
 }
