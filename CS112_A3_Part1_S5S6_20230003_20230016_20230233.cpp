@@ -620,7 +620,7 @@ void Display_Menu1(){
              << "4) Rotate image                       |\n"
              << "5) Flip image                         |\n"
              << "|-------------------------------------|\n"
-             << "Please choose from the menu [1, 2, 3, 4, 5, 6]: ";
+             << "Please choose from the menu [1, 2, 3, 4, 5]: ";
 
         getline(cin, choice1); // Get the user's choice
 
@@ -629,7 +629,7 @@ void Display_Menu1(){
             if (choice1 == "1" || choice1 == "2" || choice1 == "3" || choice1 == "4" || choice1 == "5")
                 break; // Exit the loop if the choice is valid
             else {
-                cout << "Please choose from the menu [1, 2, 3, 4, 5, 6]: ";
+                cout << "Please choose from the menu [1, 2, 3, 4, 5]: ";
                 getline(cin, choice1);
             }
         }
