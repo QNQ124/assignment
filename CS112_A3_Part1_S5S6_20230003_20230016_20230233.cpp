@@ -1,19 +1,26 @@
 // ===================================================================================== //
 // FCAI – Structured Programming – 2024 - Assignment
+//
 // File:    CS112_A3_Part1_S5S6_20230003_20230016_20230233.cpp
+//
 // Purpose: This program allows users to apply filters to images, including
 //          grayscale conversion, black and white conversion, image inversion,
 //          rotation, and flipping. It provides a user-friendly menu for selecting
 //          filters and saving the modified images.
+//
 // Author:  Ibrahim Mohamed Saad Mohamed_S6_20230003 => Filter 1
 //          Ahmed Hussein Mohamed Ahmed_S5_20230016  => Filter 2, 5
-//          Ezz eldin Omar Abdellatif_S6_20230233    => Filter 3, 6
+//          Ezzeldin Omar Abd-Elatif_S6_20230233     => Filter 3, 6
+//
 // Emails:  hes93314@gmail.com
 //          hzrdu3500@gmail.com
 //          ezzeldinomar7@gmail.com
+//
 // TA name: Rana Abdelkader
+//
 // Date:    3/26/2024
-// Version: 5.0
+//
+// Version: 6.0
 // ===================================================================================== //
 
 // Include necessary libraries
