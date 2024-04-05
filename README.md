@@ -15,5 +15,9 @@ Qnq && HaZrDoOo0 && Ezzeldin
 10) => Frame in image
 11) => Detect image Edges
 12) => Blur image
-13) => Purple image
-14) => Infrared image
+13) => Purple filter
+14) => Infrared filter
+15) => Old_tv filter
+16) => Sunlight filter
+17) => Oil painting filter
+18) => Image Skewing Filter
