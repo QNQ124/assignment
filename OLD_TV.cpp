@@ -4,7 +4,7 @@
 #include <fstream>        // Input/output stream class to operate on files.
 #include <windows.h>      // For Windows-specific functions like SetCurrentDirectory
 #include <filesystem>     // For filesystem operations
-#include <stdio.h>        // I am using for delete temporary_file if user chosen apply a filter
+#include <stdio.h>        // using for delete temporary_file
 #define sv saveImage      // Define a shorthand for sv method
 #define uint unsigned int // Define uint as an alias for unsigned int
 #define gp getPixel       // Define a shorthand for getPixel method
@@ -15,20 +15,21 @@ using namespace std;
 int main() {
 
     // load the image
-    Image image("Wano 2.jpg");
+    Image image("Water 7.jpg");
 
     for (int i = 0; i < image.width; ++i) {
         for (int j = 0; j < image.height; ++j) {
             for (int k = 0; k < image.channels; ++k) {
 
                 // Applying scanline
-                if ((j % 3) == 0){
-                    // Darken pixel to simulate scanline
-                    image(i, j, k) = image(i, j, k) - 5;
+                if ((j % 4) == 0){
+                    // lighten pixel to simulate scanline
+                    image(i, j, k) = image(i, j, k);
+                    image(i, j + 1, k) = image(i, j + 1, k);
                 }
                 else{
                     // Add random noise
-                    int noise = rand() % 36 - 10;       // random noise in [-25, 25]
+                    int noise = rand() % 56 - 10;       // random noise in [-45, 45]
                     int Value = image(i, j, k) + noise;
                     Value = min(255, max(0, Value));
                     image(i, j, k) = Value;
@@ -41,7 +42,7 @@ int main() {
     Image final_image("new.jpg");
 
     // Decreasing darken degree, Then multiply factor for all Pixel like a ratio of Darken
-    double factor = 1.11 + (-55 / 255.0);
+    double factor = 1.11 + (-45 / 255.0);
 
     // Darken image after applying Scanline
     for (int i = 0; i < final_image.width; i++) {
