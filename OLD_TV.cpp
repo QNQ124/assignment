@@ -22,7 +22,7 @@ int main() {
             for (int k = 0; k < image.channels; ++k) {
 
                 // Applying scanline
-                if ((j % 4) == 0){
+                if ((j % 2) == 0){
                     // lighten pixel to simulate scanline
                     image(i, j, k) = image(i, j, k);
                     image(i, j + 1, k) = image(i, j + 1, k);
@@ -42,7 +42,7 @@ int main() {
     Image final_image("new.jpg");
 
     // Decreasing darken degree, Then multiply factor for all Pixel like a ratio of Darken
-    double factor = 1.11 + (-45 / 255.0);
+    double factor = 1.11 + (-48 / 255.0);
 
     // Darken image after applying Scanline
     for (int i = 0; i < final_image.width; i++) {
