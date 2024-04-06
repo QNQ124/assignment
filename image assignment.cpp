@@ -3,6 +3,7 @@
 #include <cmath>
 #include "Image_Class.h"
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 void Inverted_Image()
@@ -41,12 +42,16 @@ void Blur_image()
     cout << "Please enter the NEW file name: " << endl;
     getline(cin,Newfile_name);
 
+    int blur_level;
+    cout << "Please enter the blur level (1, 2, or 3): ";
+    cin >> blur_level;
+
     Image photo(file_name);
     int width = photo.width;
     int height = photo.height;
-    int num_passes = 5; // Number of passes for blurring
-    double sigma = 30;  // Increased sigma value for more blurring
-    int kernel_size = 5; // Increased kernel size
+    int num_passes = blur_level; // Number of passes for blurring
+    double sigma = 30 * blur_level;  // Increased sigma value for more blurring
+    int kernel_size = 5 * blur_level; // Increased kernel size
     vector<vector<double>> kernel_values(kernel_size, vector<double>(kernel_size, 0.0));
 
     // Precompute Gaussian kernel values
@@ -101,6 +106,7 @@ void Blur_image()
     // Save the blurred image
     photo.saveImage(Newfile_name);
 }
+
 
 void rotate_image()
 {
@@ -449,7 +455,8 @@ void purple_filter()
     photo.saveImage(Newfile_name);
 }
 
+
 int main()
 {
-    frame_to_image();
+    Blur_image();
 }
