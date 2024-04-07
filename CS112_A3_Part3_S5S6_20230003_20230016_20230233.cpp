@@ -453,7 +453,17 @@ int Merge_2_Images(string filename1){
             }
             f3.saveImage("temporary_file.jpg");
         }
-
+        else if(max(image1.width, image2.width) == image1.width && max(image1.height, image2.height) == image2.height){
+            Image f3(smaller_width, bigger_height);
+            for (int i = 0; i < smaller_width; ++i) {
+                for (int j = 0; j < bigger_height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        f3(i, j, k) = (image1(i, j, k) + image2(i, j, k)) / 2;
+                    }
+                }
+            }
+            f3.saveImage("temporary_file.jpg");
+        }
         else{
             Image f3(smaller_width, smaller_height);
             for (int i = 0; i < smaller_width; ++i) {
