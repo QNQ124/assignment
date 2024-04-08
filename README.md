@@ -22,3 +22,5 @@ Qnq && HaZrDoOo0 && Ezzeldin
 16) => Sunlight filter
 17) => Oil painting filter
 18) => Image Skewing Filter
+19) => Night Vision Filter
+20) => Noise Filter
