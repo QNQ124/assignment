@@ -358,11 +358,14 @@ int Merge_2_Images(string filename1){
             getline(cin, filename2);
         }
     }
+
     Image image2(filename2);
     int smaller_width = 0, smaller_height = 0, bigger_width = 0, bigger_height = 0;
+
     cout << "\n|-- What you want to do? --|\n";
     cout << "1) Resize both images      |\n";
     cout << "2) Merge the common area   |\n";
+    cout << "|--------------------------|\n";
     cout << "Choose from the menu [1, 2]: ";
     getline(cin, choice1);
 
@@ -442,18 +445,7 @@ int Merge_2_Images(string filename1){
         }
     }
     else{
-        if(max(image1.width, image2.width) == image2.width && max(image1.height, image2.height) == image1.height) {
-            Image f3(smaller_width, bigger_height);
-            for (int i = 0; i < smaller_width; ++i) {
-                for (int j = 0; j < bigger_height; ++j) {
-                    for (int k = 0; k < 3; ++k) {
-                        f3(i, j, k) = (image1(i, j, k) + image2(i, j, k)) / 2;
-                    }
-                }
-            }
-            f3.saveImage("temporary_file.jpg");
-        }
-        else if(max(image1.width, image2.width) == image1.width && max(image1.height, image2.height) == image2.height){
+        if((max(image1.width, image2.width) == image2.width && max(image1.height, image2.height) == image1.height) || (max(image1.width, image2.width) == image1.width && max(image1.height, image2.height) == image2.height)) {
             Image f3(smaller_width, bigger_height);
             for (int i = 0; i < smaller_width; ++i) {
                 for (int j = 0; j < bigger_height; ++j) {
@@ -767,6 +759,7 @@ int DarkenAndLighten_image(string filename){
     cout << "\n|- What you want to do? -|\n";
     cout << "1) Darken Filter         |\n";
     cout << "2) Lighten Filter        |\n";
+    cout << "|------------------------|\n";
     cout << "Choose from the menu [1, 2]: ";
     getline(cin, choice1);
 
@@ -810,7 +803,7 @@ int DarkenAndLighten_image(string filename){
     } else {
         // Lighten the image
         num_brightness = min(255, num_brightness);
-        factor = 1.11 + (num_brightness / 255.0);
+        factor = 1.45 + (num_brightness / 255.0);
     }
 
     for (int i = 0; i < image.width; i++) {
@@ -876,45 +869,46 @@ int Crop_Image(string filename){
     int crop_height;
     int crop_start_x;
     int crop_start_y;
-    cout << "enter the width for the cropped image : " ;
+    cout << "\nPlease enter the width for the cropped image: " ;
     cin >> crop_width;
 
     while ( crop_width > image.width)
     {
-        cout << "invalid input, width is larger than the original image's width" << endl;
-        cout << "enter the width for the cropped image : " ;
+        cout << "\n|- invalid input, width is larger than the original image's width -|" << endl;
+        cout << "enter the width for the cropped image: " ;
         cin >> crop_width;
     }
 
-    cout << "enter the height for the cropped image : " ;
+    cout << "\nPlease enter the height for the cropped image: " ;
     cin >> crop_height;
 
     while ( crop_height > image.height)
     {
-        cout << "invalid input, height is larger than the original image's height" << endl;
-        cout << "enter the height for the cropped image : " ;
+        cout << "\n|- invalid input, height is larger than the original image's height -|" << endl;
+        cout << "enter the height for the cropped image: " ;
         cin >> crop_height;
     }
 
-    cout << "enter the starting point for width ( on x axis ) : ";
+    cout << "\nPlease enter the starting point for width ( on x axis ): ";
     cin >> crop_start_x;
 
     while ( crop_start_x + crop_width > image.width)
     {
-        cout << "invalid input, the width is out of range" << endl;
-        cout << "enter the starting point for width ( on x axis ) : ";
+        cout << "\n|- invalid input, the width is out of range -|" << endl;
+        cout << "enter the starting point for width ( on x axis ): ";
         cin >> crop_start_x;
     }
 
-    cout << "enter the starting point for height ( on y axis ) : ";
+    cout << "\nPlease enter the starting point for height ( on y axis ): ";
     cin >> crop_start_y;
 
     while ( crop_start_y + crop_height > image.height)
     {
-        cout << "invalid input, the height is out of range" << endl;
-        cout << "enter the starting point for height ( on y axis ) : ";
+        cout << "\n|- invalid input, the height is out of range -|" << endl;
+        cout << "enter the starting point for height ( on y axis ): ";
         cin >> crop_start_y;
     }
+    cin.ignore();
 
     Image cropped_image(crop_width,crop_height);
 
@@ -1881,6 +1875,139 @@ int Skewing_Filter(string filename){
     return choice; // Return the user's choice from the menu
 }
 
+
+int NightVision_Filter(string filename){
+
+    Image photo(filename);
+
+    for(int i = 0; i < photo.width; i++) // Using .width  to get image width
+    {
+        for (int j = 0; j < photo.height; j++) // Using .height to get image height
+        {
+            photo(i,j,0) = 0;
+            photo(i,j,2) = 0;
+        }
+    }
+
+    double factor = 1.11 + (-45.0 / 255.0);
+
+    // brightness image after applying
+    for (int i = 0; i < photo.width; i++) {
+        for (int j = 0; j < photo.height; j++) {
+            for (int k = 0; k < photo.channels; k++) {
+                int new_value = photo(i, j, k) * factor;
+                photo(i, j, k) = int(max(0, min(255, new_value))); // Check range of RGB and Modify it
+            }
+        }
+    }
+
+    int choice = Display_Menu2(); // Display a menu for further actions
+    // Handle user's choice
+    if(choice == 1) {
+        cout << endl;
+        return 0; // Exit the function
+    }
+    else if(choice == 2){
+        photo.sv("temporary_file.jpg"); // save the current filter in temporary file
+    }
+    else if(choice == 3){
+        char buffer[MAX_PATH];
+        GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
+        string old_dir(buffer); // Store the current directory
+        string new_filename;
+        cout << "Please enter name of new file: ";
+        getline(cin, new_filename); // Get the new filename from user
+        cout << endl;
+        saving_options();
+        int size = new_filename.size();
+        while (true) {
+            if ((size < 5 || (new_filename.substr(size - 4, size) != ".jpg" && new_filename.substr(size - 4, size) != ".bmp" && new_filename.substr(size - 4, size) != ".png")) && (size < 6 || (new_filename.substr(size - 5, size) != ".jpeg"))) {
+                cout << "--- Wrong in file extension ---\n";
+                cout << "Please enter name of new file: ";
+                getline(cin, new_filename);
+                size = new_filename.size();
+                cout << endl;
+            }
+            else if(!isValid(new_filename)) { // Check if the new filename is valid
+                photo.sv(new_filename); // Save the flipped image with the new filename
+                cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+                break;
+            }
+            else {
+                cout << "----- File already exists -----\n";
+                cout << "Please enter name of new file: ";
+                getline(cin, new_filename);
+                size = new_filename.size();
+                cout << endl;
+            }
+        }
+        SetCurrentDirectory(old_dir.c_str()); // Restore the old directory
+    }
+    return choice; // Return the user's choice from the menu
+}
+
+
+int Noise_Filter(string filename){
+
+    Image photo(filename);
+
+    for (int i = 0; i < photo.width; i++) {
+        for (int j = 0; j < photo.height; j++) {
+            for (int k = 0; k < photo.channels; k++) {
+
+                double factor = 1.11 + (-1 * (rand() % 121) / 255.0);
+                int new_value = photo(i, j, k) * factor;
+                photo(i, j, k) = int(max(0, min(255, new_value))); // Check range of RGB and Modify it
+
+            }
+        }
+    }
+
+    int choice = Display_Menu2(); // Display a menu for further actions
+    // Handle user's choice
+    if(choice == 1) {
+        cout << endl;
+        return 0; // Exit the function
+    }
+    else if(choice == 2){
+        photo.sv("temporary_file.jpg"); // save the current filter in temporary file
+    }
+    else if(choice == 3){
+        char buffer[MAX_PATH];
+        GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
+        string old_dir(buffer); // Store the current directory
+        string new_filename;
+        cout << "Please enter name of new file: ";
+        getline(cin, new_filename); // Get the new filename from user
+        cout << endl;
+        saving_options();
+        int size = new_filename.size();
+        while (true) {
+            if ((size < 5 || (new_filename.substr(size - 4, size) != ".jpg" && new_filename.substr(size - 4, size) != ".bmp" && new_filename.substr(size - 4, size) != ".png")) && (size < 6 || (new_filename.substr(size - 5, size) != ".jpeg"))) {
+                cout << "--- Wrong in file extension ---\n";
+                cout << "Please enter name of new file: ";
+                getline(cin, new_filename);
+                size = new_filename.size();
+                cout << endl;
+            }
+            else if(!isValid(new_filename)) { // Check if the new filename is valid
+                photo.sv(new_filename); // Save the flipped image with the new filename
+                cout << "Your image is saved in: " << fs::current_path().string() << "\n\n"; // Print the image path
+                break;
+            }
+            else {
+                cout << "----- File already exists -----\n";
+                cout << "Please enter name of new file: ";
+                getline(cin, new_filename);
+                size = new_filename.size();
+                cout << endl;
+            }
+        }
+        SetCurrentDirectory(old_dir.c_str()); // Restore the old directory
+    }
+    return choice; // Return the user's choice from the menu
+}
+
 // Display Menu, which contains all Filters and take file path from user
 void Display_Menu1(){
 
@@ -1966,7 +2093,7 @@ void Display_Menu1(){
              << "17) Infrared Filter                   |\n"
              << "18) Skewing Filter                    |\n"
              << "19) Night Vision Filter               |\n"
-             << "20)                                   |\n"
+             << "20) Noise Filter                      |\n"
              << "|-------------------------------------|\n"
              << "Please enter your choice from the menu: ";
 
@@ -2019,10 +2146,10 @@ void Display_Menu1(){
             chance = Infrared_Filter(filename); // Applying flip Filter
         else if (choice1 == "18")
             chance = Skewing_Filter(filename); // Applying flip Filter
-//        else if (choice1 == "19")
-//            chance = nightVision_Filter(filename); // Applying flip Filter
-//        else if (choice1 == "20")
-//            chance = UnKnown(filename); // Applying flip Filter
+        else if (choice1 == "19")
+            chance = NightVision_Filter(filename); // Applying flip Filter
+        else if (choice1 == "20")
+            chance = Noise_Filter(filename); // Applying flip Filter
     }
 }
 

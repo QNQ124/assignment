@@ -358,8 +358,10 @@ int Merge_2_Images(string filename1){
             getline(cin, filename2);
         }
     }
+
     Image image2(filename2);
     int smaller_width = 0, smaller_height = 0, bigger_width = 0, bigger_height = 0;
+
     cout << "\n|-- What you want to do? --|\n";
     cout << "1) Resize both images      |\n";
     cout << "2) Merge the common area   |\n";
@@ -443,18 +445,7 @@ int Merge_2_Images(string filename1){
         }
     }
     else{
-        if(max(image1.width, image2.width) == image2.width && max(image1.height, image2.height) == image1.height) {
-            Image f3(smaller_width, bigger_height);
-            for (int i = 0; i < smaller_width; ++i) {
-                for (int j = 0; j < bigger_height; ++j) {
-                    for (int k = 0; k < 3; ++k) {
-                        f3(i, j, k) = (image1(i, j, k) + image2(i, j, k)) / 2;
-                    }
-                }
-            }
-            f3.saveImage("temporary_file.jpg");
-        }
-        else if(max(image1.width, image2.width) == image1.width && max(image1.height, image2.height) == image2.height){
+        if((max(image1.width, image2.width) == image2.width && max(image1.height, image2.height) == image1.height) || (max(image1.width, image2.width) == image1.width && max(image1.height, image2.height) == image2.height)) {
             Image f3(smaller_width, bigger_height);
             for (int i = 0; i < smaller_width; ++i) {
                 for (int j = 0; j < bigger_height; ++j) {
@@ -768,6 +759,7 @@ int DarkenAndLighten_image(string filename){
     cout << "\n|- What you want to do? -|\n";
     cout << "1) Darken Filter         |\n";
     cout << "2) Lighten Filter        |\n";
+    cout << "|------------------------|\n";
     cout << "Choose from the menu [1, 2]: ";
     getline(cin, choice1);
 
@@ -811,7 +803,7 @@ int DarkenAndLighten_image(string filename){
     } else {
         // Lighten the image
         num_brightness = min(255, num_brightness);
-        factor = 1.11 + (num_brightness / 255.0);
+        factor = 1.45 + (num_brightness / 255.0);
     }
 
     for (int i = 0; i < image.width; i++) {
@@ -877,45 +869,46 @@ int Crop_Image(string filename){
     int crop_height;
     int crop_start_x;
     int crop_start_y;
-    cout << "enter the width for the cropped image : " ;
+    cout << "\nPlease enter the width for the cropped image: " ;
     cin >> crop_width;
 
     while ( crop_width > image.width)
     {
-        cout << "|- invalid input, width is larger than the original image's width -|" << endl;
-        cout << "enter the width for the cropped image : " ;
+        cout << "\n|- invalid input, width is larger than the original image's width -|" << endl;
+        cout << "enter the width for the cropped image: " ;
         cin >> crop_width;
     }
 
-    cout << "enter the height for the cropped image : " ;
+    cout << "\nPlease enter the height for the cropped image: " ;
     cin >> crop_height;
 
     while ( crop_height > image.height)
     {
-        cout << "|- invalid input, height is larger than the original image's height -|" << endl;
-        cout << "enter the height for the cropped image : " ;
+        cout << "\n|- invalid input, height is larger than the original image's height -|" << endl;
+        cout << "enter the height for the cropped image: " ;
         cin >> crop_height;
     }
 
-    cout << "enter the starting point for width ( on x axis ) : ";
+    cout << "\nPlease enter the starting point for width ( on x axis ): ";
     cin >> crop_start_x;
 
     while ( crop_start_x + crop_width > image.width)
     {
-        cout << "|- invalid input, the width is out of range -|" << endl;
-        cout << "enter the starting point for width ( on x axis ) : ";
+        cout << "\n|- invalid input, the width is out of range -|" << endl;
+        cout << "enter the starting point for width ( on x axis ): ";
         cin >> crop_start_x;
     }
 
-    cout << "enter the starting point for height ( on y axis ) : ";
+    cout << "\nPlease enter the starting point for height ( on y axis ): ";
     cin >> crop_start_y;
 
     while ( crop_start_y + crop_height > image.height)
     {
-        cout << "|- invalid input, the height is out of range -|" << endl;
-        cout << "enter the starting point for height ( on y axis ) : ";
+        cout << "\n|- invalid input, the height is out of range -|" << endl;
+        cout << "enter the starting point for height ( on y axis ): ";
         cin >> crop_start_y;
     }
+    cin.ignore();
 
     Image cropped_image(crop_width,crop_height);
 
@@ -1307,9 +1300,9 @@ int Resize_Image(string filename){
     int new_width;
     int new_height;
 
-    cout << "Please enter image new width: ";
+    cout << "\nPlease enter image new width: ";
     cin >> new_width;
-    cout << "Please enter image new height: ";
+    cout << "\nPlease enter image new height: ";
     cin >> new_height;
 
     Image new_image(new_width,new_height);
@@ -1376,7 +1369,7 @@ int Resize_Image(string filename){
 int Blur_Image(string filename){
 
     /*
-          SOON
+        soon
     */
 }
 
@@ -1758,6 +1751,7 @@ void Display_Menu1(){
 
 
 int main() {
+
     Display_Menu1(); // Call the function to running the completing code
     return 0;
 }
