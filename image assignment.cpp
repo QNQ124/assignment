@@ -37,76 +37,98 @@ void Blur_image()
 {
     string file_name, Newfile_name;
 
-    cout << "Please enter the file name: " << endl;
-    getline(cin,file_name);
-    cout << "Please enter the NEW file name: " << endl;
-    getline(cin,Newfile_name);
-
     int blur_level;
-    cout << "Please enter the blur level (1, 2, or 3): ";
+    cout << "Please enter the blur level (1, 2 , 3 ): ";
     cin >> blur_level;
+    blur_level++;
+    
+    Image photo("building.jpg");
 
-    Image photo(file_name);
-    int width = photo.width;
-    int height = photo.height;
-    int num_passes = blur_level; // Number of passes for blurring
-    double sigma = 30 * blur_level;  // Increased sigma value for more blurring
-    int kernel_size = 5 * blur_level; // Increased kernel size
-    vector<vector<double>> kernel_values(kernel_size, vector<double>(kernel_size, 0.0));
+    // Calculate resized dimensions
+    int resized_width = max(1, photo.width / blur_level);
+    int resized_height = max(1, photo.height / blur_level);
 
-    // Precompute Gaussian kernel values
-    for (int x = -kernel_size / 2; x <= kernel_size / 2; x++)
+    Image resized_photo(resized_width, resized_height);
+
+
+    Image new_image(resized_width,resized_height);
+    const float SCALING_CONST_W = (float)photo.width/(float)resized_width ;
+    const float SCALING_CONST_H = (float)photo.height/(float)resized_height;
+
+    for (int i = 0; i < resized_width; ++i)
     {
-        for (int y = -kernel_size / 2; y <= kernel_size / 2; y++)
+        for (int j = 0; j < resized_height; ++j)
         {
-            kernel_values[x + kernel_size / 2][y + kernel_size / 2] = exp(-(x * x + y * y) / (2 * sigma * sigma)) / (2 * M_PI * sigma * sigma);
+            for (int k = 0; k < 3; ++k)
+            {
+                int new_pixel_W = i * SCALING_CONST_W;
+                int new_pixel_H = j * SCALING_CONST_H;
+                new_image(i,j,k) = photo(new_pixel_W,new_pixel_H,k);
+            }
         }
     }
+    
+    // Blur parameters
+    int kernel_size = 5 + (blur_level + 1) * 2; // Increase kernel size for higher blur levels
 
-    // Blur image
-    for (int pass = 0; pass < num_passes; pass++)
+    double sigma = 30 + (blur_level + 1) * 10;  // Increase sigma value for higher blur levels
+
+    // Apply blur operation
+    for (int i = 0; i < resized_width; i++)
     {
-#pragma omp parallel for collapse(2)
-        for (int i = 0; i < width; i++)
+        for (int j = 0; j < resized_height; j++)
         {
-            for (int j = 0; j < height; j++)
+            double weighted_sum[3] = {0.0}; // Initialize array for each channel
+            double sum_of_weights = 0.0;
+
+            // Iterate over each pixel in the neighborhood according to the kernel size
+            for (int x = -kernel_size / 2; x <= kernel_size / 2; x++)
             {
-                double weighted_sum[3] = {0.0}; // Initialize array for each channel
-                double sum_of_weights = 0.0;
-
-                // Iterate over each pixel in the neighborhood according to the kernel size
-                for (int x = -kernel_size / 2; x <= kernel_size / 2; x++)
+                for (int y = -kernel_size / 2; y <= kernel_size / 2; y++)
                 {
-                    for (int y = -kernel_size / 2; y <= kernel_size / 2; y++)
-                    {
-                        int neighbor_x = i + x;
-                        int neighbor_y = j + y;
+                    int neighbor_x = i + x;
+                    int neighbor_y = j + y;
 
-                        // Check boundary conditions
-                        if (neighbor_x >= 0 && neighbor_x < width && neighbor_y >= 0 && neighbor_y < height)
+                    // Check boundary conditions
+                    if (neighbor_x >= 0 && neighbor_x < resized_width && neighbor_y >= 0 && neighbor_y < resized_height)
+                    {
+                        double weight = exp(-(x * x + y * y) / (2 * sigma * sigma)) / (2 * M_PI * sigma * sigma);
+                        // Get pixel value for each channel
+                        for (int c = 0; c < 3; c++)
                         {
-                            double weight = kernel_values[x + kernel_size / 2][y + kernel_size / 2];
-                            // Get pixel value for each channel
-                            for (int c = 0; c < 3; c++)
-                            {
-                                weighted_sum[c] += weight * photo.getPixel(neighbor_x, neighbor_y, c);
-                            }
-                            sum_of_weights += weight;
+                            weighted_sum[c] += weight * new_image(neighbor_x, neighbor_y, c);
                         }
+                        sum_of_weights += weight;
                     }
                 }
-                // Assign the blurred pixel values back to the image
-                for (int c = 0; c < 3; c++) {
-                    photo.setPixel(i, j, c, weighted_sum[c] / sum_of_weights);
-                }
+            }
+            // Assign the blurred pixel values back to the image
+            for (int c = 0; c < 3; c++)
+            {
+                resized_photo(i, j, c) = weighted_sum[c] / sum_of_weights;
+            }
+        }
+    }
+    
+    // Resize the image back to its original size
+    Image new_image1(photo.width,photo.height);
+
+    const float SCALING_CONST_W2 = (float)resized_width/(float)photo.width ;
+    const float SCALING_CONST_H2 = (float)resized_height/(float)photo.height;
+
+    for (int i = 0; i < photo.width; ++i) {
+        for (int j = 0; j < photo.height; ++j) {
+            for (int k = 0; k < 3; ++k) {
+                int new_pixel_W = i * SCALING_CONST_W2;
+                int new_pixel_H = j * SCALING_CONST_H2;
+                new_image1(i,j,k) = resized_photo(new_pixel_W,new_pixel_H,k);
             }
         }
     }
 
     // Save the blurred image
-    photo.saveImage(Newfile_name);
+    new_image1.saveImage("blur.jpg");
 }
-
 
 void rotate_image()
 {
@@ -455,103 +477,39 @@ void purple_filter()
     photo.saveImage(Newfile_name);
 }
 
-void Blur_image2()
+
+void Night_Vision()
 {
     string file_name, Newfile_name;
 
-    cout << "Please enter the file name: " << endl;
-    getline(cin, file_name);
-    cout << "Please enter the NEW file name: " << endl;
-    getline(cin, Newfile_name);
+    Image photo("gamma_adjusted_image.jpg");
 
-    int blur_level;
-    cout << "Please enter the blur level (1, 2, or 3): ";
-    cin >> blur_level;
-
-    Image photo(file_name);
-
-    // Resize the image to a smaller size based on blur level
-    int resized_width = photo.width / blur_level;
-    int resized_height = photo.height / blur_level;
-    Image resized_photo(resized_width, resized_height);
-
-    // Perform the resizing operation
-    for (int i = 0; i < resized_width; ++i) {
-        for (int j = 0; j < resized_height; ++j) {
-            for (int k = 0; k < 3; ++k) {
-                int sum = 0;
-                // Iterate over pixels in the original image corresponding to this block in resized image
-                for (int x = i * blur_level; x < (i + 1) * blur_level; ++x) {
-                    for (int y = j * blur_level; y < (j + 1) * blur_level; ++y) {
-                        sum += photo.getPixel(x, y, k);
-                    }
-                }
-                int average = sum / (blur_level * blur_level);
-                resized_photo(i, j, k) = average;
-            }
-        }
-    }
-
-    // Blur parameters
-    int kernel_size = 5 + (blur_level - 1) * 2; // Increase kernel size for higher blur levels
-    double sigma = 30 + (blur_level - 1) * 10;  // Increase sigma value for higher blur levels
-
-    // Apply blur operation
-    for (int i = 0; i < resized_width; i++)
+    for(int i = 0; i < photo.width; i++) // Using .width  to get image width
     {
-        for (int j = 0; j < resized_height; j++)
+        for (int j = 0; j < photo.height; j++) // Using .height to get image height
         {
-            double weighted_sum[3] = {0.0}; // Initialize array for each channel
-            double sum_of_weights = 0.0;
-
-            // Iterate over each pixel in the neighborhood according to the kernel size
-            for (int x = -kernel_size / 2; x <= kernel_size / 2; x++)
-            {
-                for (int y = -kernel_size / 2; y <= kernel_size / 2; y++)
-                {
-                    int neighbor_x = i + x;
-                    int neighbor_y = j + y;
-
-                    // Check boundary conditions
-                    if (neighbor_x >= 0 && neighbor_x < resized_width && neighbor_y >= 0 && neighbor_y < resized_height)
-                    {
-                        double weight = exp(-(x * x + y * y) / (2 * sigma * sigma)) / (2 * M_PI * sigma * sigma);
-                        // Get pixel value for each channel
-                        for (int c = 0; c < 3; c++)
-                        {
-                            weighted_sum[c] += weight * resized_photo(neighbor_x, neighbor_y, c);
-                        }
-                        sum_of_weights += weight;
-                    }
-                }
-            }
-            // Assign the blurred pixel values back to the image
-            for (int c = 0; c < 3; c++) {
-                resized_photo(i, j, c) = weighted_sum[c] / sum_of_weights;
-            }
+            photo(i,j,0) = 0;
+            photo(i,j,2) = 0;
         }
     }
 
-    // Resize the image back to its original size
-    Image original_size(photo.width, photo.height);
-    for (int i = 0; i < photo.width; ++i) {
-        for (int j = 0; j < photo.height; ++j) {
-            for (int k = 0; k < 3; ++k) {
-                // Ensure we're accessing the correct pixel in the resized image
-                int resized_i = i / blur_level;
-                int resized_j = j / blur_level;
-                original_size(i, j, k) = resized_photo(resized_i, resized_j, k);
+    double factor = 1.11 + (48 / 255.0);
+
+    // brightness image after applying
+    for (int i = 0; i < photo.width; i++) {
+        for (int j = 0; j < photo.height; j++) {
+            for (int k = 0; k < photo.channels; k++) {
+                int new_value = photo(i, j, k) * factor;
+                photo(i, j, k) = int(max(0, min(255, new_value))); // Check range of RGB and Modify it
             }
         }
-    }
-
-
-    // Save the blurred image
-    original_size.saveImage(Newfile_name);
 }
 
+photo.saveImage("night.jpg");
+
+}
 
 int main()
 {
-    Blur_image2();
+    Blur_image();
 }
