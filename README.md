@@ -1,7 +1,8 @@
 # Baby Photoshop
 -Created by--
 Qnq && HaZrDoOo0 && Ezzeldin
-
+## Notes:
+- Any errors, whether in the comments or the code itself in the separate filters, have been modified in the integrated code that begins with CS112.
 ## Main Filters
 1) => GrayScale image
 2) => B & W image
@@ -21,3 +22,5 @@ Qnq && HaZrDoOo0 && Ezzeldin
 16) => Sunlight filter
 17) => Oil painting filter
 18) => Image Skewing Filter
+19) => Night Vision Filter
+20) => Noise Filter
