@@ -1,0 +1,39 @@
+{
+    "classes": [
+        {
+            "className": "DIPShowImage",
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "image",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QImage",
+                    "user": false,
+                    "write": "setImage"
+                }
+            ],
+            "qualifiedClassName": "DIPShowImage",
+            "slots": [
+                {
+                    "access": "public",
+                    "name": "freeImage",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QQuickPaintedItem"
+                }
+            ]
+        }
+    ],
+    "inputFile": "dipshowimage.h",
+    "outputRevision": 68
+}

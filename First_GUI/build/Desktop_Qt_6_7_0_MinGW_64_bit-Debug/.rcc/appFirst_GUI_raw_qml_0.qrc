@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/First_GUI/">
+    <file alias="AutoInfoBox.qml">C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/AutoInfoBox.qml</file>
+    <file alias="Main.qml">C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/Main.qml</file>
+    <file alias="assets/images/parots.bmp">C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/assets/images/parots.bmp</file>
+    <file alias="assets/images/House.bmp">C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/assets/images/House.bmp</file>
+    <file alias="assets/images/gamma_adjusted_image.jpg">C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/assets/images/gamma_adjusted_image.jpg</file>
+    <file alias="assets/images/luffy.jpg">C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/assets/images/luffy.jpg</file>
+    <file alias="assets/images/Monument+Grey.jpeg">C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/assets/images/Monument+Grey.jpeg</file>
+  </qresource>
+</RCC>
+

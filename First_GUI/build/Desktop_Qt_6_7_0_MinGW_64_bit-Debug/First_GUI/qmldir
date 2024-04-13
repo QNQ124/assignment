@@ -1,0 +1,6 @@
+module First_GUI
+typeinfo appFirst_GUI.qmltypes
+prefer :/First_GUI/
+AutoInfoBox 1.0 AutoInfoBox.qml
+Main 1.0 Main.qml
+

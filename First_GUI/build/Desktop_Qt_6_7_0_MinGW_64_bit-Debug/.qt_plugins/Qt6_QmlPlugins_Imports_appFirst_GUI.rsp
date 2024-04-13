@@ -1,0 +1,14 @@
+-rootPath
+C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI
+-cmake-output
+-output-file
+C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_appFirst_GUI.cmake
+-importPath
+C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI
+-importPath
+C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug
+-importPath
+D:/Qt/6.7.0/mingw_64/./qml
+-qrcFiles
+C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmake_First_GUI.qrc
+C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/appFirst_GUI_raw_qml_0.qrc
