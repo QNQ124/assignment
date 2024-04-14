@@ -174,7 +174,7 @@ int GrayScale_Filter(string filename) {
         GetCurrentDirectory(MAX_PATH, buffer);
         string old_dir(buffer);
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
         saving_options();
@@ -247,7 +247,7 @@ int BlackAndWhite_Filter(string filename)
         GetCurrentDirectory(MAX_PATH, buffer);
         string old_dir(buffer);
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
         saving_options();
@@ -320,7 +320,7 @@ int Invert_Filter(string filename)
         GetCurrentDirectory(MAX_PATH, buffer);
         string old_dir(buffer);
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename);
         cout << endl;
         saving_options();
@@ -353,7 +353,7 @@ int Invert_Filter(string filename)
     return choice;
 }
 
-// Merge 2 images function
+// Merge 2 images function_2
 int Merge_2_Images(string filename1){
 
     // Initial variables and load the first image
@@ -505,7 +505,7 @@ int Merge_2_Images(string filename1){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from the user
         cout << endl;
         saving_options();
@@ -615,7 +615,7 @@ int Flip_Image(string filename)
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -731,7 +731,7 @@ int Rotate_Image(string filename)
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -855,7 +855,7 @@ int DarkenAndLighten_image(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from the user
         cout << endl;
         saving_options();
@@ -985,7 +985,7 @@ int Crop_Image(string filename) {
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1224,7 +1224,7 @@ int Frame_to_Image(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1266,7 +1266,7 @@ int Detect_Image_Edges(string filename){
     for (int i = 0; i < image.width; ++i) {
         for (int j = 0; j < image.height; ++j) {
 
-            unsigned int average = 0;
+            uint average = 0;
 
             for (int k = 0; k < 3; ++k) {
                 average += image(i, j, k);
@@ -1320,7 +1320,7 @@ int Detect_Image_Edges(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1401,7 +1401,7 @@ int Resize_Image(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1550,7 +1550,7 @@ int Blur_Image(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1595,12 +1595,10 @@ int Sunlight_Filter(string filename){
     for (int i = 0; i < image.width; ++i) {
         for (int j = 0; j < image.height; ++j) {
             image(i, j, 0) = 50;   // Red component
-            image(i, j ,1) = 55;    // Green component
+            image(i, j, 1) = 55;    // Green component
             image(i, j, 2) = 0;     // Blue component
         }
     }
-
-    image.sv("ij.jpg");
 
     // Blend the input image with the gradient
     for (int i = 0; i < f1.width; ++i) {
@@ -1637,7 +1635,7 @@ int Sunlight_Filter(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1693,9 +1691,9 @@ int OilPainting_Filter(string filename){
             // Compute intensity levels and update counts and averages
             for (int k = -radius; k <= radius; ++k) {
                 for (int l = -radius; l <= radius; ++l) {
-                    int r =  image.getPixel(i + k,j + l,0);
-                    int g =  image.getPixel(i + k,j + l,1);
-                    int b =  image.getPixel(i + k,j + l,2);
+                    int r =  image.gp(i + k,j + l,0);
+                    int g =  image.gp(i + k,j + l,1);
+                    int b =  image.gp(i + k,j + l,2);
                     int intensity = (((r+g+b)/3)* intensity_levels )/ 255;
                     if( intensity > 255 )
                         intensity = 255;
@@ -1743,7 +1741,7 @@ int OilPainting_Filter(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1833,7 +1831,7 @@ int Old_TV_Filter(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1877,9 +1875,9 @@ int Purple_Filter(string filename){
         for (int j = 0; j < photo.height; j++)
         {
             // Get the current pixel's RGB values
-            int red = photo.getPixel(i, j, 0);  // Get red channel value
-            int green = photo.getPixel(i, j, 1); // Get green channel value
-            int blue = photo.getPixel(i, j, 2);  // Get blue channel value
+            int red = photo.gp(i, j, 0);  // Get red channel value
+            int green = photo.gp(i, j, 1); // Get green channel value
+            int blue = photo.gp(i, j, 2);  // Get blue channel value
 
             // Increase red and blue, decrease green to create a purple tint
             red += 60; // increase red value
@@ -1914,7 +1912,7 @@ int Purple_Filter(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -1966,8 +1964,8 @@ int Infrared_Filter(string filename)
         {
             for (int k = 0; k < 3; k++) // Assuming 3 color channels (RGB)
             {
-                unsigned int pixel_color = image.getPixel(i, j, k); // Assuming getPixel method exists
-                unsigned int pixel_inverted_color = 255 - pixel_color; // Inverting color
+                uint pixel_color = image.gp(i, j, k); // Assuming getPixel method exists
+                uint pixel_inverted_color = 255 - pixel_color; // Inverting color
                 image.setPixel(i, j, k, pixel_inverted_color); // Assuming setPixel method exists
             }
         }
@@ -1987,7 +1985,7 @@ int Infrared_Filter(string filename)
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -2029,16 +2027,16 @@ int Skewing_Filter(string filename){
     while(true){
         try{
             // validate the angle value
-            cout << "Please enter the angle from -90 to 90: ";
+            cout << "\nPlease enter the intensity of skewness from 0 to 90: ";
             getline(cin, angle);
             double a = stod(angle);
-            if(a <= 90 && a >= -90)
+            if(a <= 90 && a >= 0)
                 break;
             else
-                cout << "\n----------- invalid input -----------\n";
+                cout << "\n------------------- invalid input ------------------";
         }
         catch(invalid_argument &a){
-            cout << "\n----------- invalid input -----------\n";
+            cout << "\n------------------- invalid input ------------------";
         }
     }
 
@@ -2049,6 +2047,14 @@ int Skewing_Filter(string filename){
     const double SKEWING_CONST =  ((double)added_width/height);
     int new_width = added_width + width;
     Image image(new_width,height);
+
+    for (int i = 0; i < new_width; ++i) {
+        for (int j = 0; j < height; ++j) {
+            image(i, j, 0) = 255;
+            image(i, j, 1) = 255;
+            image(i, j, 2) = 255;
+        }
+    }
 
     // Skew the image
     for (int i = 0; i < width ; ++i)
@@ -2080,7 +2086,7 @@ int Skewing_Filter(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -2155,7 +2161,7 @@ int NightVision_Filter(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
@@ -2222,7 +2228,7 @@ int Noise_Filter(string filename){
         GetCurrentDirectory(MAX_PATH, buffer); // Get the current directory
         string old_dir(buffer); // Store the current directory
         string new_filename;
-        cout << "Please enter name of new file: ";
+        cout << "\nPlease enter name of new file: ";
         getline(cin, new_filename); // Get the new filename from user
         cout << endl;
         saving_options();
