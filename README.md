@@ -1,4 +1,4 @@
-# Baby Photoshop
+# Baby Photoshop [GUI]
 -Created by--
 Qnq && HaZrDoOo0 && Ezzeldin
 ## Notes:
