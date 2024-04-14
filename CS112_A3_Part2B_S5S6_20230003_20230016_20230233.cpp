@@ -16,8 +16,8 @@
 //          ezzeldinomar7@gmail.com                                                     //
 //                                                                                      //
 // TA name: Rana Abdelkader                                                             //
-// Date:    4/7/2024                                                                    //
-// Version: 3.0                                                                         //
+// Date:    4/14/2024                                                                   //
+// Version: 5.0                                                                         //
 // ==================================================================================== //
 
 // Include necessary libraries
@@ -827,7 +827,7 @@ int DarkenAndLighten_image(string filename){
     } else {
         // Lighten the image
         num_brightness = min(255, num_brightness);
-        factor = 1.45 + (num_brightness / 255.0);
+        factor = 1.11 + (num_brightness / 255.0);
     }
 
     // Apply the brightness adjustment to the image
