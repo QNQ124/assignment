@@ -26,6 +26,7 @@ qt_add_qml_module(appFirst_GUI
         assets/images/gamma_adjusted_image.jpg
         assets/images/luffy.jpg
         assets/images/Monument+Grey.jpeg
+        build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

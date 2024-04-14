@@ -264,6 +264,94 @@
                         "name": "QObject"
                     }
                 ]
+            },
+            {
+                "className": "ImageProcessor12",
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filename",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "savingImage",
+                        "returnType": "int"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "ImageProcessor12",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            },
+            {
+                "className": "ImageProcessor13",
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filename1",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "filename2",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "choice",
+                                "type": "int"
+                            }
+                        ],
+                        "name": "applyMerge",
+                        "returnType": "int"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "ImageProcessor13",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            },
+            {
+                "className": "ImageProcessor14",
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filename1",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "new_width",
+                                "type": "int"
+                            },
+                            {
+                                "name": "new_height",
+                                "type": "int"
+                            }
+                        ],
+                        "name": "applyResize",
+                        "returnType": "int"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "ImageProcessor14",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
             }
         ],
         "inputFile": "ImageProcessor.h",

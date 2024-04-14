@@ -45,6 +45,15 @@ int main(int argc, char *argv[])
     ImageProcessor11 imageProcessor11;
     engine.rootContext()->setContextProperty("imageProcessor11", &imageProcessor11);
 
+    ImageProcessor12 imageProcessor12;
+    engine.rootContext()->setContextProperty("imageProcessor12", &imageProcessor12);
+
+    ImageProcessor13 imageProcessor13;
+    engine.rootContext()->setContextProperty("imageProcessor13", &imageProcessor13);
+
+    ImageProcessor14 imageProcessor14;
+    engine.rootContext()->setContextProperty("imageProcessor14", &imageProcessor14);
+
     const QUrl url(QStringLiteral("qrc:/First_GUI/Main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
         &app, [url](QObject *obj, const QUrl &objUrl) {

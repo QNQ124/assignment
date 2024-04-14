@@ -427,7 +427,7 @@ int Sunlight_Filter(const string &filename){
 }
 
 // OLd TV Filter function
-int Old_TV_Filter(string filename) {
+int Old_TV_Filter(const string &filename) {
 
     string filename1 = filename.substr(8, filename.size() - 1);
 
@@ -475,6 +475,169 @@ int Old_TV_Filter(string filename) {
     image.sv("temporary_file.jpg"); // Save the grayscale image with a new filename
 
     return 0; // Return value as needed
+}
+
+
+
+// Merge 2 images function
+int Merge_2_Images(const string &filename1, const string &filename2,const int &choice){
+
+    // Initial variables and load the first image
+    string filename1_1 =filename1.substr(8, filename1.size() - 1);
+
+    Image image1(filename1_1);
+
+    string filename2_2 =  filename2.substr(8, filename2.size() - 1);
+
+    Image image2(filename2_2); // Load the second image
+    int smaller_width = 0, smaller_height = 0, bigger_width = 0, bigger_height = 0;
+
+    // Determine the dimensions of the smaller and bigger images
+    if (min(image1.width, image2.width) == image1.width) {
+        smaller_width = image1.width;
+        smaller_height = image1.height;
+        bigger_width = image2.width;
+        bigger_height = image2.height;
+    } else {
+        smaller_width = image2.width;
+        smaller_height = image2.height;
+        bigger_width = image1.width;
+        bigger_height = image1.height;
+    }
+
+    if(choice == 1) {
+        if(min(image1.width, image2.width) == image1.width) {
+            // Resize smaller image to the bigger image dimensions and merge them
+            Image new_image(bigger_width, bigger_height);
+            const float SCALING_CONST_W = (float) smaller_width / (float) bigger_width;
+            const float SCALING_CONST_H = (float) smaller_height / (float) bigger_height;
+
+            for (int i = 0; i < bigger_width; ++i) {
+                for (int j = 0; j < bigger_height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        int new_pixel_W = i * SCALING_CONST_W;
+                        int new_pixel_H = j * SCALING_CONST_H;
+                        new_image(i, j, k) = image1(new_pixel_W, new_pixel_H, k);
+                    }
+                }
+            }
+
+            Image f3(bigger_width, bigger_height);
+
+            for (int i = 0; i < bigger_width; ++i) {
+                for (int j = 0; j < bigger_height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        f3(i, j, k) = (image2(i, j, k) + new_image(i, j, k)) / 2;
+                    }
+                }
+            }
+            f3.saveImage("temporary_file.jpg");
+        }
+        else{
+            // Resize smaller image to the bigger image dimensions and merge them
+            Image new_image(bigger_width, bigger_height);
+            const float SCALING_CONST_W = (float) smaller_width / (float) bigger_width;
+            const float SCALING_CONST_H = (float) smaller_height / (float) bigger_height;
+
+            for (int i = 0; i < bigger_width; ++i) {
+                for (int j = 0; j < bigger_height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        int new_pixel_W = i * SCALING_CONST_W;
+                        int new_pixel_H = j * SCALING_CONST_H;
+                        new_image(i, j, k) = image2(new_pixel_W, new_pixel_H, k);
+                    }
+                }
+            }
+
+            Image f3(bigger_width, bigger_height);
+
+            for (int i = 0; i < bigger_width; ++i) {
+                for (int j = 0; j < bigger_height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        f3(i, j, k) = (image1(i, j, k) + new_image(i, j, k)) / 2;
+                    }
+                }
+            }
+            f3.saveImage("temporary_file.jpg");
+        }
+    }
+    else{
+        // Merge the common area of the two images
+        if((max(image1.width, image2.width) == image2.width && max(image1.height, image2.height) == image1.height) || (max(image1.width, image2.width) == image1.width && max(image1.height, image2.height) == image2.height)) {
+            Image f3(smaller_width, bigger_height);
+            for (int i = 0; i < smaller_width; ++i) {
+                for (int j = 0; j < bigger_height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        f3(i, j, k) = (image1(i, j, k) + image2(i, j, k)) / 2;
+                    }
+                }
+            }
+            f3.saveImage("temporary_file.jpg");
+        }
+        else{
+            Image f3(smaller_width, smaller_height);
+            for (int i = 0; i < smaller_width; ++i) {
+                for (int j = 0; j < smaller_height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        f3(i, j, k) = (image1(i, j, k) + image2(i, j, k)) / 2;
+                    }
+                }
+            }
+            f3.saveImage("temporary_file.jpg");
+        }
+    }
+
+    cout << filename1 << endl << filename2 << endl;
+    return 0;
+}
+
+// Resize image function
+int Resize_Image(const string &filename, const int &new_width, const int &new_height){
+
+    // Initial variables and load the first image
+    string filename1 =filename.substr(8, filename.size() - 1);
+
+    // Load the image
+    Image image(filename1);
+
+    // Create a new image with the specified width and height
+    Image new_image(new_width, new_height);
+
+    const float SCALING_CONST_W = (float)image.width / (float)new_width;
+    const float SCALING_CONST_H = (float)image.height / (float)new_height;
+
+    // Resize the image using nearest-neighbor interpolation
+    for (int i = 0; i < new_width; ++i) {
+        for (int j = 0; j < new_height; ++j) {
+            for (int k = 0; k < 3; ++k) {
+                // Calculate the corresponding pixel in the original image
+                int new_pixel_W = i * SCALING_CONST_W;
+                int new_pixel_H = j * SCALING_CONST_H;
+                // Copy the pixel value to the new image
+                new_image(i, j, k) = image(new_pixel_W, new_pixel_H, k);
+            }
+        }
+    }
+
+    cout << filename1 << endl;
+
+    // sv the image
+    new_image.sv("temporary_file.jpg"); // Save the grayscale image with a new filename
+
+    return 0; // Return value as needed
+}
+
+int SaveImage(const string &filename){
+
+    string filename1 = filename.substr(8, filename.size() - 1);
+
+    cout << filename << endl << filename1 << endl;
+
+    Image temp("temporary_file.jpg");
+
+    temp.sv(filename1);
+
+    return 0;
 }
 
 
@@ -542,4 +705,22 @@ ImageProcessor11::ImageProcessor11(QObject *parent) : QObject(parent) {}
 
 int ImageProcessor11::applyOldTV(const QString &filename) {
     return Old_TV_Filter(filename.toStdString());
+}
+
+ImageProcessor12::ImageProcessor12(QObject *parent) : QObject(parent) {}
+
+int ImageProcessor12::savingImage(const QString &filename) {
+    return SaveImage(filename.toStdString());
+}
+
+ImageProcessor13::ImageProcessor13(QObject *parent) : QObject(parent) {}
+
+int ImageProcessor13::applyMerge(const QString &filename1, const QString &filename2, const int choice) {
+    return Merge_2_Images(filename1.toStdString(), filename2.toStdString(), choice);
+}
+
+ImageProcessor14::ImageProcessor14(QObject *parent) : QObject(parent) {}
+
+int ImageProcessor14::applyResize(const QString &filename1, const int &new_width, const int &new_height) {
+    return Resize_Image(filename1.toStdString(), new_width, new_height);
 }

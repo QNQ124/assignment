@@ -192,7 +192,7 @@ build all_qmllint_module: phony appFirst_GUI_qmllint_module
 #############################################
 # Utility command for appFirst_GUI_tooling
 
-build appFirst_GUI_tooling: phony First_GUI/AutoInfoBox.qml First_GUI/Main.qml First_GUI/assets/images/parots.bmp First_GUI/assets/images/House.bmp First_GUI/assets/images/gamma_adjusted_image.jpg First_GUI/assets/images/luffy.jpg First_GUI/assets/images/Monument+Grey.jpeg
+build appFirst_GUI_tooling: phony First_GUI/AutoInfoBox.qml First_GUI/Main.qml First_GUI/assets/images/parots.bmp First_GUI/assets/images/House.bmp First_GUI/assets/images/gamma_adjusted_image.jpg First_GUI/assets/images/luffy.jpg First_GUI/assets/images/Monument+Grey.jpeg First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg
 
 
 #############################################
@@ -336,7 +336,7 @@ build .rcc/qmlcache/appFirst_GUI_Main_qml.cpp | ${cmake_ninja_workdir}.rcc/qmlca
 #############################################
 # Custom command for .rcc\qrc_appFirst_GUI_raw_qml_0.cpp
 
-build .rcc/qrc_appFirst_GUI_raw_qml_0.cpp | ${cmake_ninja_workdir}.rcc/qrc_appFirst_GUI_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/AutoInfoBox.qml C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/Main.qml C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/parots.bmp C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/House.bmp C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/gamma_adjusted_image.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/luffy.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/Monument+Grey.jpeg .rcc/appFirst_GUI_raw_qml_0.qrc D$:/Qt/6.7.0/mingw_64/./bin/rcc.exe || appFirst_GUI_autogen appFirst_GUI_autogen_timestamp_deps appFirst_GUI_qmlimportscan appFirst_GUI_tooling
+build .rcc/qrc_appFirst_GUI_raw_qml_0.cpp | ${cmake_ninja_workdir}.rcc/qrc_appFirst_GUI_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/AutoInfoBox.qml C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/Main.qml C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/parots.bmp C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/House.bmp C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/gamma_adjusted_image.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/luffy.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/Monument+Grey.jpeg temporary_file.jpg .rcc/appFirst_GUI_raw_qml_0.qrc D$:/Qt/6.7.0/mingw_64/./bin/rcc.exe || appFirst_GUI_autogen appFirst_GUI_autogen_timestamp_deps appFirst_GUI_qmlimportscan appFirst_GUI_tooling
   COMMAND = cmd.exe /C "cd /D "C:\Users\Domain\OneDrive - techno mix\Documents\First_GUI\build\Desktop_Qt_6_7_0_MinGW_64_bit-Debug" && D:\Qt\6.7.0\mingw_64\.\bin\rcc.exe --output "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp" --name appFirst_GUI_raw_qml_0 "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/appFirst_GUI_raw_qml_0.qrc" --no-zstd"
   DESC = Running rcc for resource appFirst_GUI_raw_qml_0
   restat = 1
@@ -452,6 +452,15 @@ build First_GUI/assets/images/Monument+Grey.jpeg | ${cmake_ninja_workdir}First_G
 
 
 #############################################
+# Custom command for First_GUI\build\Desktop_Qt_6_7_0_MinGW_64_bit-Debug\temporary_file.jpg
+
+build First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg | ${cmake_ninja_workdir}First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg: CUSTOM_COMMAND temporary_file.jpg
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Domain\OneDrive - techno mix\Documents\First_GUI" && D:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg" "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg""
+  DESC = Copying build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg to C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg
+  restat = 1
+
+
+#############################################
 # Phony custom command for CMakeFiles\appFirst_GUI_qmlimportscan
 
 build CMakeFiles/appFirst_GUI_qmlimportscan | ${cmake_ninja_workdir}CMakeFiles/appFirst_GUI_qmlimportscan: phony .qt_plugins/Qt6_QmlPlugins_Imports_appFirst_GUI.cmake
@@ -469,7 +478,7 @@ build .qt_plugins/Qt6_QmlPlugins_Imports_appFirst_GUI.cmake | ${cmake_ninja_work
 #############################################
 # Phony custom command for CMakeFiles\appFirst_GUI_autogen_timestamp_deps
 
-build CMakeFiles/appFirst_GUI_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appFirst_GUI_autogen_timestamp_deps: phony D$:/Qt/6.7.0/mingw_64/./bin/moc.exe D$:/Qt/6.7.0/mingw_64/lib/libQt6Quick.a D$:/Qt/6.7.0/mingw_64/lib/libQt6Qml.a
+build CMakeFiles/appFirst_GUI_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appFirst_GUI_autogen_timestamp_deps: phony D$:/Qt/6.7.0/mingw_64/./bin/moc.exe D$:/Qt/6.7.0/mingw_64/lib/libQt6Qml.a D$:/Qt/6.7.0/mingw_64/lib/libQt6Quick.a
 
 
 #############################################

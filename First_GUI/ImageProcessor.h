@@ -135,4 +135,40 @@ signals:
 public slots:
 };
 
+class ImageProcessor12 : public QObject
+{
+    Q_OBJECT
+public:
+    explicit ImageProcessor12(QObject *parent = nullptr);
+    Q_INVOKABLE int savingImage(const QString &filename);
+
+signals:
+
+public slots:
+};
+
+class ImageProcessor13 : public QObject
+{
+    Q_OBJECT
+public:
+    explicit ImageProcessor13(QObject *parent = nullptr);
+    Q_INVOKABLE int applyMerge(const QString &filename1, const QString &filename2, const int choice);
+
+signals:
+
+public slots:
+};
+
+class ImageProcessor14 : public QObject
+{
+    Q_OBJECT
+public:
+    explicit ImageProcessor14(QObject *parent = nullptr);
+    Q_INVOKABLE int applyResize(const QString &filename1, const int &new_width, const int &new_height);
+
+signals:
+
+public slots:
+};
+
 #endif // IMAGEPROCESSOR_H

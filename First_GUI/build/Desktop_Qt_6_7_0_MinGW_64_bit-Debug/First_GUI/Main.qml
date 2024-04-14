@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls
 import Qt.labs.platform
+import QtQuick.Window
+import Qt.labs.folderlistmodel
 
 Window {
 
@@ -9,6 +11,10 @@ Window {
 
     visible: true
     title: qsTr("Baby Photoshop")
+
+    property bool isFirst: false
+    property bool isFirst1: false
+    property string filename: ""
 
     Rectangle {
         id: topbar
@@ -71,6 +77,7 @@ Window {
             height: 250
             anchors.leftMargin: -653
             anchors.verticalCenterOffset: 0
+            cache: false
         }
 
         Rectangle {
@@ -95,7 +102,7 @@ Window {
                 margins: 50
             }
 
-            // imageSource2: "assets/images/Monument+Grey.jpeg"
+            imageSource2: "assets/images/Monument+Grey.jpeg"
         }
     }
 
@@ -127,8 +134,8 @@ Window {
         anchors.horizontalCenterOffset: 0
         anchors {
             bottom: topbar.top
-            leftMargin: -1120
-            rightMargin: -1120
+            leftMargin: -1121
+            rightMargin: -1119
             topMargin: -50
             bottomMargin: -55
         }
@@ -231,10 +238,19 @@ Window {
 
             onClicked: {
                 // Call the C++ slot to apply the grayscale filter
-                var result = Qt.file.remove(
-                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
-                imageProcessor1.applyGrayScale(fileOpenDialog.currentFile)
-                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor1.applyGrayScale(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor1.applyGrayScale(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -292,8 +308,20 @@ Window {
 
             onClicked: {
                 // Call the C++ slot to apply the grayscale filter
-                imageProcessor2.applyBlackAndWhite(fileOpenDialog.currentFile)
-                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor2.applyBlackAndWhite(
+                                fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor2.applyBlackAndWhite(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -340,12 +368,21 @@ Window {
             anchors.bottomMargin: 0
             hoverEnabled: true
 
-            property int counter: -1
-
             onClicked: {
                 // Call the C++ slot to apply the grayscale filter
-                imageProcessor3.applyPurple(fileOpenDialog.currentFile)
-                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor3.applyPurple(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor3.applyPurple(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -394,8 +431,19 @@ Window {
 
             onClicked: {
                 // Call the C++ slot to apply the grayscale filter
-                imageProcessor4.applyInvert(fileOpenDialog.currentFile).source
-                        = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor4.applyInvert(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor4.applyInvert(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -446,8 +494,19 @@ Window {
             hoverEnabled: true
 
             onClicked: {
-                imageProcessor5.applyInfrared(fileOpenDialog.currentFile)
-                second_image5.source = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor5.applyInfrared(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor5.applyInfrared(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -497,8 +556,19 @@ Window {
             hoverEnabled: true
 
             onClicked: {
-                imageProcessor6.applyNoise(fileOpenDialog.currentFile)
-                second_image6.source = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor6.applyNoise(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor6.applyNoise(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -546,8 +616,19 @@ Window {
             hoverEnabled: true
 
             onClicked: {
-                imageProcessor7.applyNightVision(fileOpenDialog.currentFile)
-                second_image7.source = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor7.applyNightVision(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor7.applyNightVision(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -595,8 +676,19 @@ Window {
             hoverEnabled: true
 
             onClicked: {
-                imageProcessor8.applyDetectEdges(fileOpenDialog.currentFile)
-                second_image8.source = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor8.applyDetectEdges(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor8.applyDetectEdges(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -644,8 +736,19 @@ Window {
             hoverEnabled: true
 
             onClicked: {
-                imageProcessor9.applyOilPainting(fileOpenDialog.currentFile)
-                second_image9.source = fileOpenDialog.currentFiles
+                if (!isFirst) {
+                    imageProcessor9.applyOilPainting(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor9.applyOilPainting(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -693,8 +796,19 @@ Window {
             hoverEnabled: true
 
             onClicked: {
-                imageProcessor10.applySunlight(fileOpenDialog.currentFile)
-                second_image10.source = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor10.applySunlight(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor10.applySunlight(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -742,8 +856,20 @@ Window {
             hoverEnabled: true
 
             onClicked: {
-                imageProcessor11.applyOldTV(fileOpenDialog.currentFile)
-                second_image11.source = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                if (!isFirst) {
+                    imageProcessor11.applyOldTV(fileOpenDialog.currentFile)
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+
+                    second_image.cache = false
+                    isFirst = true
+                } else {
+                    imageProcessor11.applyOldTV(
+                                "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                    second_image.cache = true
+                    second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                    second_image.cache = false
+                }
             }
         }
     }
@@ -753,30 +879,141 @@ Window {
 
         property color baseColor12: "white"
 
-        color: if (buttonMouseArea12.containPress) {
+        color: if (buttonMouseArea12.containsMouse) {
                    return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
+               } else if (buttonMouseArea12.containsPress) {
                    return Qt.darker(baseColor12)
                } else {
                    return baseColor12
                }
 
-        x: 673
-        y: 394
-        width: 88
-        height: 38
-        anchors.right: emptyBox3.left
-        anchors.top: emptyBox3.top
-        anchors.rightMargin: 319
-        anchors.topMargin: 144
+        width: 92
+        height: 34
+        anchors.verticalCenter: topbar.verticalCenter
+        anchors.left: topbar.right
+        anchors.right: topbar.left
+        anchors.top: topbar.bottom
+        anchors.bottom: topbar.top
+        anchors.leftMargin: -447
+        anchors.rightMargin: -677
+        anchors.topMargin: 77
+        anchors.bottomMargin: -162
+        anchors.verticalCenterOffset: 119
+        anchors.horizontalCenterOffset: 113
+        anchors.horizontalCenter: topbar.horizontalCenter
+
         Text {
-            id: old_Tv_Filter1
+            id: resizeing_filter
             y: 8
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Resizing Filter"
             font.pixelSize: 12
-            anchors.horizontalCenterOffset: 0
+            anchors.horizontalCenterOffset: 1
             anchors.horizontalCenter: filter12.horizontalCenter
+        }
+
+        MouseArea {
+            id: buttonMouseArea12
+            width: 86
+            height: 38
+            anchors.verticalCenter: resizeing_filter.verticalCenter
+            anchors.left: resizeing_filter.right
+            anchors.right: resizeing_filter.left
+            anchors.top: resizeing_filter.bottom
+            anchors.bottom: resizeing_filter.top
+            anchors.leftMargin: -78
+            anchors.rightMargin: -78
+            anchors.topMargin: -24
+            anchors.bottomMargin: -27
+            anchors.verticalCenterOffset: 0
+            anchors.horizontalCenterOffset: -1
+            anchors.horizontalCenter: resizeing_filter.horizontalCenter
+            hoverEnabled: true
+
+            onClicked: {
+                popup1.open()
+            }
+
+            Popup {
+                id: popup1
+                width: 170
+                height: 115
+                modal: true
+                focus: true
+                visible: false
+
+                Rectangle {
+                    width: parent.width
+                    height: parent.height
+                    color: "white"
+                    border.color: "white"
+                    border.width: 0.5
+
+                    Column {
+                        anchors.fill: parent
+                        spacing: 4
+
+                        TextField {
+                            id: widthField
+                            width: parent.width
+                            placeholderText: "Width..."
+                        }
+
+                        TextField {
+                            id: heightField
+                            width: parent.width
+                            placeholderText: "Height..."
+                        }
+
+                        Text {
+                            id: errorText
+                            visible: false
+                            color: "red"
+                            text: "Error: Width, Height not <= 0"
+                        }
+                    }
+
+                    Button {
+                        text: "Submit"
+                        anchors {
+                            horizontalCenter: parent.horizontalCenter
+                            bottom: parent.bottom
+                            bottomMargin: 5
+                        }
+
+                        onClicked: {
+                            var widthInput = parseFloat(widthField.text)
+                            var heightInput = parseFloat(heightField.text)
+                            console.log(widthInput)
+                            if (widthInput <= 0 || heightInput <= 0 || isNaN(
+                                        heightInput) || isNaN(widthInput)) {
+                                errorText.visible = true
+                                return
+                            }
+
+                            errorText.visible = false
+
+                            if (!isFirst) {
+                                imageProcessor14.applyResize(
+                                            fileOpenDialog.currentFile,
+                                            widthInput, heightInput)
+                                second_image.cache = true
+                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.cache = false
+                                isFirst = true
+                            } else {
+                                imageProcessor14.applyResize(
+                                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
+                                            widthInput, heightInput)
+                                second_image.cache = true
+                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.cache = false
+                            }
+                            popup1.close()
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -785,10 +1022,10 @@ Window {
 
         property color baseColor12: "white"
 
-        color: if (buttonMouseArea12.containPress) {
+        color: if (buttonMouseArea15.containsMouse) {
                    return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
-                   return Qt.lighter(baseColor12)
+               } else if (buttonMouseArea15.containsPress) {
+                   return Qt.darker(baseColor12)
                } else {
                    return baseColor12
                }
@@ -802,42 +1039,133 @@ Window {
         anchors.rightMargin: 217
         anchors.topMargin: 143
         Text {
-            id: old_Tv_Filter2
+            id: merge_2_Image
             y: 9
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Merge 2 images"
             font.pixelSize: 12
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter13.horizontalCenter
+        }
+
+        MouseArea {
+            id: buttonMouseArea15
+            width: 88
+            height: 38
+            anchors.verticalCenter: merge_2_Image.verticalCenter
+            anchors.left: merge_2_Image.right
+            anchors.right: merge_2_Image.left
+            anchors.top: merge_2_Image.bottom
+            anchors.bottom: merge_2_Image.top
+            anchors.leftMargin: -86
+            anchors.rightMargin: -87
+            anchors.topMargin: -25
+            anchors.bottomMargin: -29
+            anchors.horizontalCenter: merge_2_Image.horizontalCenter
+            hoverEnabled: true
+
+            Menu {
+                id: menu1
+                MenuItem {
+                    id: menu1_choice1
+                    text: "Resize both images"
+                    onTriggered: {
+                        if (!isFirst) {
+                            imageProcessor13.applyMerge(
+                                        fileOpenDialog.currentFile, filename, 1)
+                            second_image.cache = true
+                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.cache = false
+                            isFirst = true
+                        } else {
+                            imageProcessor13.applyMerge(
+                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
+                                        filename, 1)
+                            second_image.cache = true
+                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.cache = false
+                        }
+                    }
+                }
+                MenuItem {
+                    id: menu1_choice2
+                    text: "Merge the common area"
+                    onTriggered: {
+                        if (!isFirst) {
+                            imageProcessor13.applyMerge(
+                                        fileOpenDialog.currentFile, filename, 2)
+                            second_image.cache = true
+                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.cache = false
+                            isFirst = true
+                        } else {
+                            imageProcessor13.applyMerge(
+                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
+                                        filename, 2)
+                            second_image.cache = true
+                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.cache = false
+                        }
+                    }
+                }
+                MenuItem {
+                    id: menu1_choice3
+                    text: "Choose another image"
+                    onTriggered: {
+                        fileOpenDialog1.open()
+                        filename = fileOpenDialog1.currentFile
+                    }
+                }
+            }
+
+            onClicked: {
+                if (filename === "") {
+                    fileOpenDialog1.open()
+                } else {
+                    menu1.open()
+                }
+            }
+
+            FileDialog {
+                id: fileOpenDialog1
+
+                folder: StandardPaths.writableLocation(
+                            StandardPaths.HomeLocation)
+
+                nameFilters: ["Image files (*.png *.jpeg *.jpg *.bmp)"]
+
+                onAccepted: {
+                    filename = fileOpenDialog1.currentFile
+                }
+            }
         }
     }
 
     Rectangle {
         id: filter14
+        property color baseColor50: "white"
 
-        property color baseColor12: "white"
+        anchors.verticalCenter: topbar.verticalCenter
+        anchors.left: topbar.right
 
-        color: if (buttonMouseArea12.containPress) {
-                   return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
-                   return Qt.lighter(baseColor12)
-               } else {
-                   return baseColor12
-               }
-
-        x: 775
-        y: 123
         width: 88
-        height: 38
-        anchors.right: emptyBox3.left
-        anchors.top: emptyBox3.top
-        anchors.rightMargin: 217
-        anchors.topMargin: 196
+        height: 40
+        anchors.right: topbar.left
+        anchors.top: topbar.bottom
+        anchors.bottom: topbar.top
+        anchors.leftMargin: -345
+        anchors.rightMargin: -780
+        anchors.topMargin: 126
+        anchors.bottomMargin: -214
+        anchors.verticalCenterOffset: 171
+        anchors.horizontalCenterOffset: 218
+        anchors.horizontalCenter: topbar.horizontalCenter
+
         Text {
-            id: old_Tv_Filter3
+            id: skewing_filter
             y: 9
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Skewing Filter"
             font.pixelSize: 12
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter14.horizontalCenter
@@ -848,14 +1176,6 @@ Window {
         id: filter15
 
         property color baseColor12: "white"
-
-        color: if (buttonMouseArea12.containPress) {
-                   return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
-                   return Qt.lighter(baseColor12)
-               } else {
-                   return baseColor12
-               }
 
         x: 776
         y: 230
@@ -869,7 +1189,7 @@ Window {
             id: old_Tv_Filter4
             y: 9
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Crop image"
             font.pixelSize: 12
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter15.horizontalCenter
@@ -880,14 +1200,6 @@ Window {
         id: filter16
 
         property color baseColor12: "white"
-
-        color: if (buttonMouseArea12.containPress) {
-                   return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
-                   return Qt.lighter(baseColor12)
-               } else {
-                   return baseColor12
-               }
 
         x: 775
         y: 281
@@ -901,7 +1213,7 @@ Window {
             id: old_Tv_Filter5
             y: 9
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Frame Filter"
             font.pixelSize: 12
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter16.horizontalCenter
@@ -912,14 +1224,6 @@ Window {
         id: filter17
 
         property color baseColor12: "white"
-
-        color: if (buttonMouseArea12.containPress) {
-                   return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
-                   return Qt.lighter(baseColor12)
-               } else {
-                   return baseColor12
-               }
 
         x: 776
         y: 338
@@ -933,7 +1237,7 @@ Window {
             id: old_Tv_Filter6
             y: 9
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Blur Filter"
             font.pixelSize: 12
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter17.horizontalCenter
@@ -944,14 +1248,6 @@ Window {
         id: filter18
 
         property color baseColor12: "white"
-
-        color: if (buttonMouseArea12.containPress) {
-                   return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
-                   return Qt.lighter(baseColor12)
-               } else {
-                   return baseColor12
-               }
 
         x: 673
         y: 394
@@ -965,7 +1261,7 @@ Window {
             id: old_Tv_Filter7
             y: 9
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Darken&Lighten"
             font.pixelSize: 12
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter18.horizontalCenter
@@ -976,14 +1272,6 @@ Window {
         id: filter19
 
         property color baseColor12: "white"
-
-        color: if (buttonMouseArea12.containPress) {
-                   return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
-                   return Qt.lighter(baseColor12)
-               } else {
-                   return baseColor12
-               }
 
         x: 673
         y: 230
@@ -998,7 +1286,7 @@ Window {
             id: old_Tv_Filter8
             y: 9
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Flip Filter"
             font.pixelSize: 12
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter19.horizontalCenter
@@ -1009,14 +1297,6 @@ Window {
         id: filter20
 
         property color baseColor12: "white"
-
-        color: if (buttonMouseArea12.containPress) {
-                   return Qt.darker(baseColor12)
-               } else if (buttonMouseArea12.containsMouse) {
-                   return Qt.lighter(baseColor12)
-               } else {
-                   return baseColor12
-               }
 
         x: 673
         y: 283
@@ -1030,7 +1310,7 @@ Window {
             id: old_Tv_Filter9
             y: 9
             color: "#101010"
-            text: "Old_TV Filter"
+            text: "Rotate Filter"
             font.pixelSize: 12
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter20.horizontalCenter
@@ -1044,7 +1324,6 @@ Window {
         height: 260
         color: "#ae58ff"
         anchors.verticalCenter: parent.verticalCenter
-        anchors.left: albumImage1.right
         anchors.verticalCenterOffset: -8
     }
 
@@ -1102,15 +1381,15 @@ Window {
         height: 20
         color: "#dddddd"
         anchors.verticalCenter: parent.verticalCenter
-        anchors.left: albumImage1.right
         anchors.verticalCenterOffset: 250
     }
 
     Rectangle {
         id: clear
 
-        property color baseColor21: "#F8F8F8"
-        color: "#F2F2F2"
+        property color baseColor21: "#F2F2F2"
+        color: buttonMouseArea14.pressed ? Qt.darker(
+                                               baseColor21) : buttonMouseArea14.containsMouse ? Qt.lighter(baseColor21) : baseColor21
         x: 935
         y: 16
         width: 79
@@ -1120,8 +1399,9 @@ Window {
         anchors.top: emptyBox3.top
         anchors.rightMargin: 66
         anchors.topMargin: 31
+
         Text {
-            id: detect_Edges1
+            id: clearOption
             y: 9
             color: "#101010"
             text: "Clear"
@@ -1131,16 +1411,16 @@ Window {
         }
 
         MouseArea {
-            id: buttonMouseArea12
+            id: buttonMouseArea14
             anchors.fill: parent
             anchors.leftMargin: 0
-            anchors.rightMargin: -8
-            anchors.topMargin: -2
-            anchors.bottomMargin: -2
+            anchors.rightMargin: 0
+            anchors.topMargin: 0
+            anchors.bottomMargin: 0
             hoverEnabled: true
 
             onClicked: {
-
+                second_image.source = ""
             }
         }
     }
@@ -1193,10 +1473,21 @@ Window {
             hoverEnabled: true
 
             onClicked: {
-                var filePath = Qt.platform.openFileDialog("Save File", "",
-                                                          "All Files (*)")
-                if (filePath !== "") {
+                fileSaveDialog.open()
+                first_image.source = ""
+                second_image.source = ""
+            }
 
+            FileDialog {
+                id: fileSaveDialog
+
+                folder: StandardPaths.writableLocation(
+                            StandardPaths.HomeLocation)
+
+                nameFilters: ["Image files (*.png *.jpeg *.jpg *.bmp)"]
+
+                onAccepted: {
+                    imageProcessor12.savingImage(fileSaveDialog.currentFile)
                 }
             }
         }
@@ -1260,6 +1551,7 @@ Window {
             hoverEnabled: true
 
             onClicked: {
+                isFirst = false
                 fileOpenDialog.open()
             }
         }
@@ -1301,7 +1593,7 @@ Window {
             color: "black"
             text: "Before"
             font.pixelSize: 16
-            anchors.horizontalCenterOffset: -16
+            anchors.horizontalCenterOffset: -20
             anchors.horizontalCenter: beforeBox.horizontalCenter
         }
     }
@@ -1389,3 +1681,16 @@ Window {
         anchors.verticalCenterOffset: -8
     }
 }
+
+/*##^##
+Designer {
+    D{i:0}D{i:1;locked:true}D{i:2;locked:true}D{i:5;locked:true}D{i:9;locked:true}D{i:10;locked:true}
+D{i:12;locked:true}D{i:18;locked:true}D{i:21;locked:true}D{i:24;locked:true}D{i:27;locked:true}
+D{i:30;locked:true}D{i:33;locked:true}D{i:36;locked:true}D{i:39;locked:true}D{i:42;locked:true}
+D{i:47}D{i:48;locked:true}D{i:50;locked:true}D{i:54;locked:true}D{i:64;locked:true}
+D{i:65;locked:true}D{i:66;locked:true}D{i:67;locked:true}D{i:68;locked:true}D{i:69;locked:true}
+D{i:70;locked:true}D{i:71;locked:true}D{i:74;locked:true}D{i:78;locked:true}D{i:80;locked:true}
+D{i:93;locked:true}
+}
+##^##*/
+

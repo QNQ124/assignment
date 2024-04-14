@@ -4,8 +4,8 @@ Item {
     id: root
 
     property alias imageSource1: albumImage1.source
+    property alias imageSource2: albumImage2.source
 
-    // property alias imageSource2: albumImage2.source
     Image {
         id: albumImage1
 
@@ -29,18 +29,18 @@ Item {
         color: "white"
     }
 
-    // Image {
-    //     id: albumImage2
+    Image {
+        id: albumImage2
 
-    //     anchors {
-    //         verticalCenter: parent.verticalCenter
-    //         left: emptyBox.right
-    //     }
-    //     width: 250
-    //     height: 250
-    //     anchors.leftMargin: 2
+        anchors {
+            verticalCenter: parent.verticalCenter
+            left: emptyBox.right
+        }
+        width: 250
+        height: 250
+        anchors.leftMargin: 2
 
-    //     source: "assets/images/Monument+Grey.jpeg"
-    //     anchors.verticalCenterOffset: 0
-    // }
+        source: "assets/images/Monument+Grey.jpeg"
+        anchors.verticalCenterOffset: 0
+    }
 }
