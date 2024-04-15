@@ -1,0 +1,24 @@
+{
+    "classes": [
+        {
+            "className": "MyFileSaver",
+            "object": true,
+            "qualifiedClassName": "MyFileSaver",
+            "slots": [
+                {
+                    "access": "public",
+                    "name": "saveFile",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "MyFileSaver.h",
+    "outputRevision": 68
+}

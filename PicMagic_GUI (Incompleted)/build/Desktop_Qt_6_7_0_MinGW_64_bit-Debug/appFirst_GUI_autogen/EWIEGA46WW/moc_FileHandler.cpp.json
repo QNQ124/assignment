@@ -1,0 +1,34 @@
+{
+    "classes": [
+        {
+            "className": "FileHandler",
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "defaultPath",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "filter",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "saveFileDialog",
+                    "returnType": "QString"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "FileHandler",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "FileHandler.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,167 @@
+# ninja log v5
+27	218	7345604055870020	First_GUI/assets/images/gamma_adjusted_image.jpg	60124a908c15220e
+436	538	7349115168638973	meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+7	531	7349117939052732	.qt_plugins/Qt6_QmlPlugins_Imports_appFirst_GUI.cmake	2e14338b16649d1e
+959	9527	7346249908997913	CMakeFiles/appFirst_GUI.dir/filedownloader.cpp.obj	f3b61767b4632326
+1285	11407	7349115278268691	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_Main_qml.cpp.obj	e9aca99a53ee7da4
+7	531	7349117939052732	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_appFirst_GUI.cmake	2e14338b16649d1e
+27	142	7346626650667822	First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/j.jpg	2bb48bc9476b2e14
+364	2701	7349117959784185	build.ninja	2d063b6196af0f6b
+27	218	7345604055870020	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/gamma_adjusted_image.jpg	60124a908c15220e
+3288	4077	7348995035937005	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/appFirst_GUI.qmltypes	e1d9c7e85960e0be
+369	435	7349115168638973	meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+7	227	7345604055660016	First_GUI/assets/images/parots.bmp	788ea8f81b73267a
+7	227	7345604055660016	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/parots.bmp	788ea8f81b73267a
+40	107	7346387161298545	First_GUI/assets/images/Monument+Grey.jpeg	aae1b995dbf2a3bb
+32	122	7347184721583146	First_GUI/DisplayImage.qml	42ffa44ff1c3adc5
+48	254	7345604056310060	First_GUI/assets/images/House.bmp	5aa1c5f84fdbdf0a
+40	107	7346387161298545	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/Monument+Grey.jpeg	aae1b995dbf2a3bb
+5622	7087	7347242417899174	.rcc/qmlcache/appFirst_GUI_DisplayImage_qml.cpp	a69441c2422aca85
+48	254	7345604056310060	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/House.bmp	5aa1c5f84fdbdf0a
+38	109	7349115165396096	First_GUI/Main.qml	9a5289048fce8943
+237	311	7349056528365943	.rcc/qmlcache/appFirst_GUI_qmlcache_loader.cpp	6d4f1610d85dcc0c
+38	109	7349115165396096	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/Main.qml	9a5289048fce8943
+57	157	7345644703304622	First_GUI/assets/images/luffy.jpg	8e4a866036a372d1
+8349	23259	7348509661250153	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_qmake_First_GUI.cpp.obj	6102eb723507ee6b
+112	360	7349115167903661	appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+112	360	7349115167903661	appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+1292	4965	7349115213912952	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp.obj	da3b02c6d53e1521
+112	360	7349115167903661	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+112	360	7349115167903661	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+237	311	7349056528365943	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_qmlcache_loader.cpp	6d4f1610d85dcc0c
+369	435	7349115168638973	meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+369	435	7349115168638973	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+539	1284	7349115176720886	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_Main_qml.cpp	6ad01050431c66b8
+369	435	7349115168638973	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+298	493	7347246190591367	.rcc/qrc_qmake_First_GUI.cpp	d4691328adce15a
+30	110	7349115165406080	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+298	493	7347246190591367	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_qmake_First_GUI.cpp	d4691328adce15a
+377	550	7349115169786514	.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+377	550	7349115169786514	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+436	538	7349115168638973	meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+436	538	7349115168638973	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+231	2739	7345958686067850	CMakeFiles/appFirst_GUI.dir/mainwindow.cpp.obj	e310cf9f9c0539f6
+436	538	7349115168638973	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+3288	4077	7348995035937005	appfirst_gui_qmltyperegistrations.cpp	e1d9c7e85960e0be
+3288	4077	7348995035937005	First_GUI/appFirst_GUI.qmltypes	e1d9c7e85960e0be
+3288	4077	7348995035937005	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appfirst_gui_qmltyperegistrations.cpp	e1d9c7e85960e0be
+5622	7087	7347242417899174	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_DisplayImage_qml.cpp	a69441c2422aca85
+539	1284	7349115176720886	.rcc/qmlcache/appFirst_GUI_Main_qml.cpp	6ad01050431c66b8
+27	142	7346626650667822	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/j.jpg	2bb48bc9476b2e14
+2890	20051	7349004035269393	CMakeFiles/appFirst_GUI.dir/ImageProcessor.cpp.obj	9d9cbac4fe5f9a91
+5743	19678	7348995191845953	CMakeFiles/appFirst_GUI.dir/appFirst_GUI_autogen/mocs_compilation.cpp.obj	b55a09fdb48c9e1c
+5802	20068	7348995197167868	CMakeFiles/appFirst_GUI.dir/appfirst_gui_qmltyperegistrations.cpp.obj	f10fceeb7f88140
+2075	15644	7349051279060232	CMakeFiles/appFirst_GUI.dir/main.cpp.obj	bfadb29377a69ee7
+739	6835	7349056593665440	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_qmlcache_loader.cpp.obj	3964766f52877d31
+11408	14508	7349115309261519	appFirst_GUI.exe	e9771a683595fb11
+42	172	7347425261249955	First_GUI/AutoInfoBox.qml	c067cc290bcc09b2
+42	172	7347425261249955	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/AutoInfoBox.qml	c067cc290bcc09b2
+354	512	7349056530295932	.rcc/qmlcache/appFirst_GUI_AutoInfoBox_qml.cpp	3cf8db6497a20ec8
+354	512	7349056530295932	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_AutoInfoBox_qml.cpp	3cf8db6497a20ec8
+748	6085	7349056586175467	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_AutoInfoBox_qml.cpp.obj	6f42ad1856354269
+10510	48846	7346528093230120	CMakeFiles/appFirst_GUI.dir/imageprocessor1.cpp.obj	89596ade81fa7184
+57	157	7345644703304622	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/luffy.jpg	8e4a866036a372d1
+30	110	7349115165406080	First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+32	122	7347184721583146	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/DisplayImage.qml	42ffa44ff1c3adc5
+7834	24076	7347242588439241	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_DisplayImage_qml.cpp.obj	1f141a9d9723d693
+7707	26969	7347242617325319	CMakeFiles/appFirst_GUI.dir/dipshowimage.cpp.obj	2bda115de35601b9
+248	2205	7348424007186301	First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg	887e19289b87eb3f
+248	2205	7348424007186301	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg	887e19289b87eb3f
+5106	22266	7348489418778296	CMakeFiles/appFirst_GUI.dir/FileHandler.cpp.obj	e11ca60cb2a2c96a
+39	113	7349051129098974	First_GUI/assets/images/image.png	c875b35c061341f1
+39	113	7349051129098974	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/image.png	c875b35c061341f1
+23	73	7349061248775138	First_GUI/assets/images/image1.png	e5859a4feb87337
+23	73	7349061248775138	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/image1.png	e5859a4feb87337
+532	2774	7349117959784185	build.ninja	2d063b6196af0f6b
+23	91	7349117962862074	First_GUI/Main.qml	9a5289048fce8943
+23	91	7349117962862074	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/Main.qml	9a5289048fce8943
+34	116	7349117963110224	First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+34	116	7349117963110224	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+118	372	7349117965682465	appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+118	372	7349117965682465	appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+118	372	7349117965682465	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+118	372	7349117965682465	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+381	442	7349117966387437	meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+381	442	7349117966387437	meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+381	442	7349117966387437	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+381	442	7349117966387437	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+443	555	7349117966387437	meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+443	555	7349117966387437	meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+443	555	7349117966387437	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+443	555	7349117966387437	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+388	570	7349117967573111	.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+388	570	7349117967573111	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+556	1169	7349117973322744	.rcc/qmlcache/appFirst_GUI_Main_qml.cpp	6ad01050431c66b8
+556	1169	7349117973322744	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_Main_qml.cpp	6ad01050431c66b8
+1174	4484	7349118006775297	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp.obj	da3b02c6d53e1521
+1169	11187	7349118073724159	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmlcache/appFirst_GUI_Main_qml.cpp.obj	e9aca99a53ee7da4
+11187	14353	7349118105374013	appFirst_GUI.exe	e9771a683595fb11
+55	239	7349118901349926	First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+55	239	7349118901349926	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+242	1656	7349118915445715	.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+242	1656	7349118915445715	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+1657	35147	7349119250416280	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp.obj	da3b02c6d53e1521
+35148	40426	7349119302971104	appFirst_GUI.exe	e9771a683595fb11
+26	141	7349119962536778	First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+26	141	7349119962536778	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+143	539	7349119966498630	appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+143	539	7349119966498630	appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+143	539	7349119966498630	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+143	539	7349119966498630	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+553	668	7349119967842390	meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+553	668	7349119967842390	meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+553	668	7349119967842390	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+553	668	7349119967842390	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+672	825	7349119967842390	meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+672	825	7349119967842390	meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+672	825	7349119967842390	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+672	825	7349119967842390	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+572	843	7349119969531125	.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+572	843	7349119969531125	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+854	5116	7349120012321998	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp.obj	da3b02c6d53e1521
+844	9519	7349120056273504	CMakeFiles/appFirst_GUI.dir/ImageProcessor.cpp.obj	9d9cbac4fe5f9a91
+9520	13219	7349120093189966	appFirst_GUI.exe	e9771a683595fb11
+46	160	7349121056014553	First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+46	160	7349121056014553	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+162	599	7349121060392640	appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+162	599	7349121060392640	appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+162	599	7349121060392640	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+162	599	7349121060392640	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+619	762	7349121061981610	meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+619	762	7349121061981610	meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+619	762	7349121061981610	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+619	762	7349121061981610	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+634	929	7349121063627825	.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+634	929	7349121063627825	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+763	943	7349121061955242	meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+763	943	7349121061955242	meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+763	943	7349121061955242	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+763	943	7349121061955242	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+956	5964	7349121113836140	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp.obj	da3b02c6d53e1521
+945	15436	7349121208479786	CMakeFiles/appFirst_GUI.dir/ImageProcessor.cpp.obj	9d9cbac4fe5f9a91
+15437	32776	7349121381501161	appFirst_GUI.exe	e9771a683595fb11
+150	442	7349121806334427	First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+150	442	7349121806334427	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+446	916	7349121810499566	.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+446	916	7349121810499566	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+917	7152	7349121873663440	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp.obj	da3b02c6d53e1521
+7154	15252	7349121954464061	appFirst_GUI.exe	e9771a683595fb11
+23	123	7349141780497239	First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+23	123	7349141780497239	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg	cf66bd0969ec39bd
+125	439	7349141783671239	appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+125	439	7349141783671239	appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+125	439	7349141783671239	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/timestamp	107f6817f7ca4ccb
+125	439	7349141783671239	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/appFirst_GUI_autogen/mocs_compilation.cpp	107f6817f7ca4ccb
+449	546	7349141784767518	meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+449	546	7349141784767518	meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+449	546	7349141784767518	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt	3a4b699200606098
+449	546	7349141784767518	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/appFirst_GUI_json_file_list.txt.timestamp	3a4b699200606098
+547	678	7349141784767518	meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+547	678	7349141784767518	meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+547	678	7349141784767518	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json.gen	2d7df9efa58ea5c3
+547	678	7349141784767518	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/meta_types/qt6appfirst_gui_debug_metatypes.json	2d7df9efa58ea5c3
+462	688	7349141786120737	.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+462	688	7349141786120737	C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp	297870b8d829ff83
+697	3497	7349141814246175	CMakeFiles/appFirst_GUI.dir/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp.obj	da3b02c6d53e1521
+688	6506	7349141844313160	CMakeFiles/appFirst_GUI.dir/ImageProcessor.cpp.obj	9d9cbac4fe5f9a91
+6507	10484	7349141883885033	appFirst_GUI.exe	e9771a683595fb11
