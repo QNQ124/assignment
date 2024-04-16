@@ -15,7 +15,7 @@ Window {
     function addFrame(inputfile, type, color) {
         imageProcessor20.applyFrame(inputfile, type, color)
         second_image.cache = true
-        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+        second_image.imageSource = temporaryFile
         second_image.cache = false
     }
 
@@ -24,7 +24,8 @@ Window {
     property bool isFirst2: false
     property string filename: ""
     property color baseColor12: "white"
-
+    property string temporaryFile: "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+    property alias fileone: fileOpenDialog.currentFile
     Rectangle {
         id: mainSection
 
@@ -54,7 +55,30 @@ Window {
                 margins: 50
             }
 
-            imageSource1: "assets/images/Monument+Grey.jpeg"
+            Text {
+                id: versiontext1
+                x: 55
+                y: -29
+                width: 140
+                height: 27
+                color: "#666666"
+                text: "Load Any Image!"
+                anchors.verticalCenter: mainSection.verticalCenter
+                anchors.left: mainSection.right
+                anchors.right: mainSection.left
+                anchors.top: mainSection.bottom
+                anchors.bottom: mainSection.top
+                anchors.leftMargin: -1099
+                anchors.rightMargin: -72
+                anchors.topMargin: -289
+                anchors.bottomMargin: -265
+                font.pixelSize: 19
+                font.italic: true
+                anchors.horizontalCenterOffset: -427
+                anchors.horizontalCenter: mainSection.horizontalCenter
+            }
+
+            imageSource1: "assets/images/log.jpg"
         }
 
         Image {
@@ -95,8 +119,6 @@ Window {
                 left: emptybox0.right
                 margins: 50
             }
-
-            imageSource2: "assets/images/Monument+Grey.jpeg"
         }
 
         Image {
@@ -129,6 +151,7 @@ Window {
 
     Rectangle {
         id: bottombar
+        y: 497
 
         anchors {
             bottom: parent.bottom
@@ -136,7 +159,7 @@ Window {
             right: parent.right
         }
 
-        height: 20
+        height: 23
         color: "#DDDDDD"
     }
 
@@ -187,7 +210,7 @@ Window {
             }
 
             text: "Magic"
-            color: "#A458FF"
+            color: "#A18DC6"
 
             font {
                 pixelSize: 32
@@ -245,6 +268,7 @@ Window {
             color: "#101010"
             font {
                 pixelSize: 12
+                italic: true
             }
         }
 
@@ -265,14 +289,13 @@ Window {
                         imageProcessor1.applyGrayScale(
                                     fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor1.applyGrayScale(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor1.applyGrayScale(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -308,6 +331,7 @@ Window {
             color: "#101010"
             text: "Black & White"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: -1
             anchors.horizontalCenter: filter2.horizontalCenter
         }
@@ -338,14 +362,13 @@ Window {
                         imageProcessor2.applyBlackAndWhite(
                                     fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor2.applyBlackAndWhite(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor2.applyBlackAndWhite(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -381,6 +404,7 @@ Window {
             color: "#101010"
             text: "Purple Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: -1
             anchors.horizontalCenter: filter3.horizontalCenter
         }
@@ -401,14 +425,13 @@ Window {
                     if (!isFirst) {
                         imageProcessor3.applyPurple(fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor3.applyPurple(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor3.applyPurple(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -444,6 +467,7 @@ Window {
             color: "#101010"
             text: "Invert Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter4.horizontalCenter
         }
@@ -464,14 +488,13 @@ Window {
                     if (!isFirst) {
                         imageProcessor4.applyInvert(fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor4.applyInvert(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor4.applyInvert(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -507,6 +530,7 @@ Window {
             color: "#101010"
             text: "Infrared Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter5.horizontalCenter
         }
@@ -530,14 +554,13 @@ Window {
                         imageProcessor5.applyInfrared(
                                     fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor5.applyInfrared(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor5.applyInfrared(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -573,6 +596,7 @@ Window {
             color: "#101010"
             text: "Noise Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: -1
             anchors.horizontalCenter: filter6.horizontalCenter
         }
@@ -594,14 +618,13 @@ Window {
                     if (!isFirst) {
                         imageProcessor6.applyNoise(fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor6.applyNoise(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor6.applyNoise(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -637,6 +660,7 @@ Window {
             color: "#101010"
             text: "Night Vision"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: -1
             anchors.horizontalCenter: filter7.horizontalCenter
         }
@@ -657,14 +681,13 @@ Window {
                         imageProcessor7.applyNightVision(
                                     fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor7.applyNightVision(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor7.applyNightVision(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -700,6 +723,7 @@ Window {
             color: "#101010"
             text: "Detect Edges"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter8.horizontalCenter
         }
@@ -720,14 +744,13 @@ Window {
                         imageProcessor8.applyDetectEdges(
                                     fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor8.applyDetectEdges(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor8.applyDetectEdges(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -763,6 +786,7 @@ Window {
             color: "#101010"
             text: "Oil Painting"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter9.horizontalCenter
         }
@@ -783,14 +807,13 @@ Window {
                         imageProcessor9.applyOilPainting(
                                     fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor9.applyOilPainting(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor9.applyOilPainting(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -826,6 +849,7 @@ Window {
             color: "#101010"
             text: "Sunlight Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: -3
             anchors.horizontalCenter: filter10.horizontalCenter
         }
@@ -846,14 +870,13 @@ Window {
                         imageProcessor10.applySunlight(
                                     fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor10.applySunlight(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor10.applySunlight(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -889,6 +912,7 @@ Window {
             color: "#101010"
             text: "Old_TV Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: -1
             anchors.horizontalCenter: filter11.horizontalCenter
         }
@@ -908,15 +932,14 @@ Window {
                     if (!isFirst) {
                         imageProcessor11.applyOldTV(fileOpenDialog.currentFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
 
                         second_image.cache = false
                         isFirst = true
                     } else {
-                        imageProcessor11.applyOldTV(
-                                    "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                        imageProcessor11.applyOldTV(temporaryFile)
                         second_image.cache = true
-                        second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                        second_image.imageSource = temporaryFile
                         second_image.cache = false
                     }
                 }
@@ -958,6 +981,7 @@ Window {
             color: "#101010"
             text: "Resizing Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 3
             anchors.horizontalCenter: filter12.horizontalCenter
         }
@@ -1050,15 +1074,15 @@ Window {
                                             fileOpenDialog.currentFile,
                                             widthInput, heightInput)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                                 isFirst = true
                             } else {
-                                imageProcessor14.applyResize(
-                                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                            widthInput, heightInput)
+                                imageProcessor14.applyResize(temporaryFile,
+                                                             widthInput,
+                                                             heightInput)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                             }
                             popup1.close()
@@ -1097,6 +1121,7 @@ Window {
             color: "#101010"
             text: "Merge 2 images"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter13.horizontalCenter
         }
@@ -1127,15 +1152,14 @@ Window {
                             imageProcessor13.applyMerge(
                                         fileOpenDialog.currentFile, filename, 1)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor13.applyMerge(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        filename, 1)
+                            imageProcessor13.applyMerge(temporaryFile,
+                                                        filename, 1)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -1149,15 +1173,14 @@ Window {
                                             fileOpenDialog.currentFile,
                                             filename, 2))
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor13.applyMerge(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        filename, 2)
+                            imageProcessor13.applyMerge(temporaryFile,
+                                                        filename, 2)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -1235,6 +1258,7 @@ Window {
             color: "#101010"
             text: "Skewing Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter14.horizontalCenter
         }
@@ -1310,15 +1334,14 @@ Window {
                                             fileOpenDialog.currentFile,
                                             angleInput)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                                 isFirst = true
                             } else {
-                                imageProcessor16.applySkewing(
-                                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                            angleInput)
+                                imageProcessor16.applySkewing(temporaryFile,
+                                                              angleInput)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                             }
 
@@ -1369,6 +1392,7 @@ Window {
             color: "#101010"
             text: "Crop image"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter15.horizontalCenter
         }
@@ -1462,9 +1486,9 @@ Window {
                                 isFirst2 = true
                             } else {
                                 original_width = imageProcessor21.checkCropWidth(
-                                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                                            temporaryFile)
                                 original_height = imageProcessor22.checkCropHeight(
-                                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg")
+                                            temporaryFile)
                             }
 
                             if (widthInput1 <= 0 || heightInput1 <= 0 || isNaN(
@@ -1484,16 +1508,16 @@ Window {
                                             widthInput1, heightInput1,
                                             xpoint, ypoint)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                                 isFirst = true
                             } else {
-                                imageProcessor23.applyCrop(
-                                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                            widthInput1, heightInput1,
-                                            xpoint, ypoint)
+                                imageProcessor23.applyCrop(temporaryFile,
+                                                           widthInput1,
+                                                           heightInput1,
+                                                           xpoint, ypoint)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                             }
                             popup3.close()
@@ -1542,6 +1566,7 @@ Window {
             color: "#101010"
             text: "Frame Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter16.horizontalCenter
         }
@@ -1570,8 +1595,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 1, 1)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         1, 1)
+                                addFrame(temporaryFile, 1, 1)
                             }
                         }
                     }
@@ -1584,8 +1608,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 1, 2)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         1, 2)
+                                addFrame(temporaryFile, 1, 2)
                             }
                         }
                     }
@@ -1598,8 +1621,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 1, 3)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         1, 3)
+                                addFrame(temporaryFile, 1, 3)
                             }
                         }
                     }
@@ -1612,8 +1634,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 1, 4)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         1, 4)
+                                addFrame(temporaryFile, 1, 4)
                             }
                         }
                     }
@@ -1627,8 +1648,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 1, 5)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         1, 5)
+                                addFrame(temporaryFile, 1, 5)
                             }
                         }
                     }
@@ -1647,8 +1667,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 2, 1)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         2, 1)
+                                addFrame(temporaryFile, 2, 1)
                             }
                         }
                     }
@@ -1661,8 +1680,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 2, 2)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         2, 2)
+                                addFrame(temporaryFile, 2, 2)
                             }
                         }
                     }
@@ -1675,8 +1693,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 2, 3)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         2, 3)
+                                addFrame(temporaryFile, 2, 3)
                             }
                         }
                     }
@@ -1689,8 +1706,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 2, 4)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         2, 4)
+                                addFrame(temporaryFile, 2, 4)
                             }
                         }
                     }
@@ -1703,8 +1719,7 @@ Window {
                                 addFrame(fileOpenDialog.currentFile, 2, 5)
                                 isFirst = true
                             } else {
-                                addFrame("file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                         2, 5)
+                                addFrame(temporaryFile, 2, 5)
                             }
                         }
                     }
@@ -1746,6 +1761,7 @@ Window {
             color: "#101010"
             text: "Blur Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter17.horizontalCenter
         }
@@ -1776,15 +1792,13 @@ Window {
                             imageProcessor18.applyBlur(
                                         fileOpenDialog.currentFile, 1)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor18.applyBlur(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        1)
+                            imageProcessor18.applyBlur(temporaryFile, 1)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -1798,15 +1812,13 @@ Window {
                             imageProcessor18.applyBlur(
                                         fileOpenDialog.currentFile, 2)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor18.applyBlur(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        2)
+                            imageProcessor18.applyBlur(temporaryFile, 2)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -1820,15 +1832,13 @@ Window {
                             imageProcessor18.applyBlur(
                                         fileOpenDialog.currentFile, 3)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor18.applyBlur(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        3)
+                            imageProcessor18.applyBlur(temporaryFile, 3)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -1877,6 +1887,7 @@ Window {
             color: "#101010"
             text: "Darken&Lighten"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter18.horizontalCenter
         }
@@ -1952,15 +1963,14 @@ Window {
                                             fileOpenDialog.currentFile,
                                             degree1, 1)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                                 isFirst = true
                             } else {
-                                imageProcessor19.applyBrightness(
-                                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                            degree1, 1)
+                                imageProcessor19.applyBrightness(temporaryFile,
+                                                                 degree1, 1)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                             }
 
@@ -2026,15 +2036,14 @@ Window {
                                             fileOpenDialog.currentFile,
                                             degree2, 2)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                                 isFirst = true
                             } else {
-                                imageProcessor19.applyBrightness(
-                                            "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                            degree2, 2)
+                                imageProcessor19.applyBrightness(temporaryFile,
+                                                                 degree2, 2)
                                 second_image.cache = true
-                                second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                                second_image.imageSource = temporaryFile
                                 second_image.cache = false
                             }
 
@@ -2105,6 +2114,7 @@ Window {
             color: "#101010"
             text: "Flip Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter19.horizontalCenter
         }
@@ -2135,15 +2145,13 @@ Window {
                             imageProcessor15.applyFlip(
                                         fileOpenDialog.currentFile, 1)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor15.applyFlip(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        1)
+                            imageProcessor15.applyFlip(temporaryFile, 1)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -2157,15 +2165,13 @@ Window {
                             imageProcessor15.applyFlip(
                                         fileOpenDialog.currentFile, 2)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor15.applyFlip(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        2)
+                            imageProcessor15.applyFlip(temporaryFile, 2)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -2207,6 +2213,7 @@ Window {
             color: "#101010"
             text: "Rotate Filter"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: filter20.horizontalCenter
         }
@@ -2238,15 +2245,13 @@ Window {
                             imageProcessor17.applyRotate(
                                         fileOpenDialog.currentFile, 90)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor17.applyRotate(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        90)
+                            imageProcessor17.applyRotate(temporaryFile, 90)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -2260,15 +2265,13 @@ Window {
                             imageProcessor17.applyRotate(
                                         fileOpenDialog.currentFile, 180)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor17.applyRotate(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        180)
+                            imageProcessor17.applyRotate(temporaryFile, 180)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -2281,15 +2284,13 @@ Window {
                             imageProcessor17.applyRotate(
                                         fileOpenDialog.currentFile, 270)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                             isFirst = true
                         } else {
-                            imageProcessor17.applyRotate(
-                                        "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg",
-                                        270)
+                            imageProcessor17.applyRotate(temporaryFile, 270)
                             second_image.cache = true
-                            second_image.imageSource = "file:///C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg"
+                            second_image.imageSource = temporaryFile
                             second_image.cache = false
                         }
                     }
@@ -2310,7 +2311,7 @@ Window {
         x: 974
         width: 1
         height: 260
-        color: "#ae58ff"
+        color: "#a18dc6"
         anchors.verticalCenter: parent.verticalCenter
         anchors.verticalCenterOffset: -8
     }
@@ -2321,7 +2322,7 @@ Window {
         y: 167
         width: 406
         height: 0.5
-        color: "#ae58ff"
+        color: "#a18dc6"
     }
 
     Rectangle {
@@ -2330,7 +2331,7 @@ Window {
         y: 220
         width: 406
         height: 1
-        color: "#ae58ff"
+        color: "#a18dc6"
     }
 
     Rectangle {
@@ -2339,7 +2340,7 @@ Window {
         y: 274
         width: 406
         height: 1
-        color: "#ae58ff"
+        color: "#a18dc6"
     }
 
     Rectangle {
@@ -2348,7 +2349,7 @@ Window {
         y: 327
         width: 406
         height: 0.5
-        color: "#ae58ff"
+        color: "#a18dc6"
     }
 
     Rectangle {
@@ -2366,10 +2367,10 @@ Window {
         id: emptyBox13
         x: 1080
         width: 40
-        height: 20
+        height: 23
         color: "#dddddd"
         anchors.verticalCenter: parent.verticalCenter
-        anchors.verticalCenterOffset: 250
+        anchors.verticalCenterOffset: 249
     }
 
     Rectangle {
@@ -2394,6 +2395,7 @@ Window {
             color: "#101010"
             text: "Clear"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: clear.horizontalCenter
         }
@@ -2416,10 +2418,10 @@ Window {
 
     Rectangle {
         id: emptyBox10
-        x: 924
+        x: 927
         width: 2
         height: 37
-        color: "#ae58ff"
+        color: "#a18dc6"
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: albumImage1.right
         anchors.verticalCenterOffset: -232
@@ -2447,6 +2449,7 @@ Window {
             color: "#101010"
             text: "Save"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: save.horizontalCenter
         }
@@ -2467,6 +2470,7 @@ Window {
                 if (fileOpenDialog.currentFile != "") {
                     console.log(fileOpenDialog.currentFile)
                     popup4.open()
+                    return
                 }
             }
 
@@ -2546,11 +2550,10 @@ Window {
                                 errorexist3.visible = true
                                 return
                             }
-
+                            isFirst = false
                             errorexist.visible = false
                             errorexist2.visible = false
                             errorexist3.visible = false
-                            first_image.source = ""
                             second_image.source = ""
                             popup4.close()
                         }
@@ -2562,10 +2565,10 @@ Window {
 
     Rectangle {
         id: emptyBox14
-        x: 826
+        x: 827
         width: 2
         height: 37
-        color: "#ae58ff"
+        color: "#a18dc6"
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: albumImage1.right
         anchors.verticalCenterOffset: -232
@@ -2608,6 +2611,7 @@ Window {
             color: "#101010"
             text: "Load"
             font.pixelSize: 12
+            font.italic: true
             anchors.horizontalCenterOffset: 0
             anchors.horizontalCenter: load.horizontalCenter
         }
@@ -2634,8 +2638,9 @@ Window {
                 if (fileOpenDialog.currentFile !== undefined) {
                     var fileName = fileOpenDialog.currentFile
                     first_image.source = fileName
+                    second_image.source = ""
                 } else {
-                    first_image.source = "assets/images/Monument+Grey.jpeg"
+                    first_image.source = "assets/images/log.jpg"
                 }
             }
         }
@@ -2643,13 +2648,13 @@ Window {
 
     Rectangle {
         id: beforeBox
-        x: 50
+        x: 40
         y: 98
         width: 102
         height: 32
         anchors.right: emptyBox3.left
         anchors.top: emptyBox3.top
-        anchors.rightMargin: 928
+        anchors.rightMargin: 938
         anchors.topMargin: 116
         Text {
             id: imageText1
@@ -2657,10 +2662,11 @@ Window {
             y: 11
             width: 46.825
             height: 23
-            color: "black"
+            color: "#a18dc6"
             text: "Before"
-            font.pixelSize: 16
-            anchors.horizontalCenterOffset: -20
+            font.pixelSize: 18
+            font.italic: true
+            anchors.horizontalCenterOffset: -28
             anchors.horizontalCenter: beforeBox.horizontalCenter
         }
     }
@@ -2680,10 +2686,11 @@ Window {
             id: imageText2
             x: 0
             y: 9
-            color: "black"
+            color: "#a18dc6"
             text: "After"
-            font.pixelSize: 16
-            anchors.horizontalCenterOffset: -23
+            font.italic: true
+            font.pixelSize: 18
+            anchors.horizontalCenterOffset: -32
             anchors.horizontalCenter: afterBox.horizontalCenter
         }
     }
@@ -2691,13 +2698,13 @@ Window {
     Rectangle {
         id: imagePathBox
 
-        x: 50
+        x: 39
         y: 418
         width: 486
         height: 32
         anchors.right: emptyBox3.left
         anchors.top: emptyBox3.top
-        anchors.rightMargin: 544
+        anchors.rightMargin: 555
         anchors.topMargin: 434
         Text {
             id: imageText3
@@ -2713,6 +2720,7 @@ Window {
             anchors.rightMargin: -2
             anchors.bottomMargin: -23
             font.pixelSize: 10
+            font.italic: true
             anchors.verticalCenterOffset: 0
             anchors.horizontalCenterOffset: -210
             anchors.horizontalCenter: imageText4.horizontalCenter
@@ -2727,6 +2735,7 @@ Window {
             text: fileOpenDialog.currentFile
             color: "#000000"
             font.pixelSize: 10
+            font.italic: true
             anchors.horizontalCenterOffset: 35
             anchors.horizontalCenter: imagePathBox.horizontalCenter
         }
@@ -2737,8 +2746,8 @@ Window {
         x: 870
         width: 0.5
         height: 260
-        color: "#ae58ff"
-        anchors.verticalCenter: parent.verticalCenter
+        color: "#a18dc6"
+        anchors.verticalCenter: mainSection.verticalCenter
         anchors.left: albumImage1.right
         anchors.verticalCenterOffset: -8
     }
@@ -2748,7 +2757,7 @@ Window {
         x: 767
         width: 0.5
         height: 260
-        color: "#ae58ff"
+        color: "#a18dc6"
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: albumImage1.right
         anchors.verticalCenterOffset: -8
@@ -2756,13 +2765,13 @@ Window {
 
     Rectangle {
         id: imagePathBox1
-        x: 50
+        x: 38
         y: 443
         width: 486
         height: 32
         anchors.right: emptyBox3.left
         anchors.top: emptyBox3.top
-        anchors.rightMargin: 544
+        anchors.rightMargin: 556
         anchors.topMargin: 470
 
         Text {
@@ -2774,16 +2783,29 @@ Window {
             color: "#000000"
             text: "Saved Image will be saved in the same Folder"
             font.pixelSize: 10
+            font.italic: true
             anchors.horizontalCenterOffset: -22
             anchors.horizontalCenter: imagePathBox1.horizontalCenter
         }
+    }
+
+    Text {
+        id: versiontext
+        x: 15
+        y: 495
+        width: 47
+        height: 19
+        color: "#666666"
+        text: "V1.0"
+        font.pixelSize: 19
+        font.italic: true
+        anchors.horizontalCenterOffset: -28
     }
 }
 
 /*##^##
 Designer {
-    D{i:0}D{i:1;locked:true}D{i:2;locked:true}D{i:3;locked:true}D{i:4;locked:true}D{i:5;locked:true}
-D{i:6;locked:true}D{i:7;locked:true}D{i:8;locked:true}D{i:9;locked:true}D{i:10;locked:true}
+    D{i:0}D{i:3}D{i:5}D{i:6}D{i:7;locked:true}D{i:8;locked:true}D{i:9;locked:true}D{i:10;locked:true}
 D{i:11;locked:true}D{i:12;locked:true}D{i:13;locked:true}D{i:14;locked:true}D{i:15;locked:true}
 D{i:16;locked:true}D{i:17;locked:true}D{i:18;locked:true}D{i:19;locked:true}D{i:20;locked:true}
 D{i:21;locked:true}D{i:22;locked:true}D{i:23;locked:true}D{i:24;locked:true}D{i:25;locked:true}
@@ -2791,21 +2813,22 @@ D{i:26;locked:true}D{i:27;locked:true}D{i:28;locked:true}D{i:29;locked:true}D{i:
 D{i:31;locked:true}D{i:32;locked:true}D{i:33;locked:true}D{i:34;locked:true}D{i:35;locked:true}
 D{i:36;locked:true}D{i:37;locked:true}D{i:38;locked:true}D{i:39;locked:true}D{i:40;locked:true}
 D{i:41;locked:true}D{i:42;locked:true}D{i:43;locked:true}D{i:44;locked:true}D{i:45;locked:true}
-D{i:46;locked:true}D{i:47;locked:true}D{i:48;locked:true}D{i:49;locked:true}D{i:51;locked:true}
-D{i:55;locked:true}D{i:56;locked:true}D{i:57;locked:true}D{i:58;locked:true}D{i:64;locked:true}
-D{i:65;locked:true}D{i:66;locked:true}D{i:67;locked:true}D{i:68;locked:true}D{i:69;locked:true}
+D{i:46;locked:true}D{i:47;locked:true}D{i:48;locked:true}D{i:49;locked:true}D{i:50;locked:true}
+D{i:51;locked:true}D{i:52;locked:true}D{i:54;locked:true}D{i:58;locked:true}D{i:59;locked:true}
+D{i:60;locked:true}D{i:61;locked:true}D{i:67;locked:true}D{i:68;locked:true}D{i:69;locked:true}
 D{i:70;locked:true}D{i:71;locked:true}D{i:72;locked:true}D{i:73;locked:true}D{i:74;locked:true}
-D{i:75;locked:true}D{i:79;locked:true}D{i:85;locked:true}D{i:86;locked:true}D{i:87;locked:true}
-D{i:91;locked:true}D{i:93;locked:true}D{i:98;locked:true}D{i:101;locked:true}D{i:102;locked:true}
-D{i:103;locked:true}D{i:108;locked:true}D{i:109;locked:true}D{i:110;locked:true}D{i:116;locked:true}
-D{i:118;locked:true}D{i:122;locked:true}D{i:124;locked:true}D{i:126;locked:true}D{i:127;locked:true}
-D{i:128;locked:true}D{i:132;locked:true}D{i:133;locked:true}D{i:134;locked:true}D{i:139;locked:true}
-D{i:140;locked:true}D{i:141;locked:true}D{i:142;locked:true}D{i:143;locked:true}D{i:144;locked:true}
+D{i:75;locked:true}D{i:76;locked:true}D{i:77;locked:true}D{i:78;locked:true}D{i:82;locked:true}
+D{i:88;locked:true}D{i:89;locked:true}D{i:90;locked:true}D{i:94;locked:true}D{i:96;locked:true}
+D{i:101;locked:true}D{i:104;locked:true}D{i:105;locked:true}D{i:106;locked:true}D{i:111;locked:true}
+D{i:112;locked:true}D{i:113;locked:true}D{i:119;locked:true}D{i:121;locked:true}D{i:125;locked:true}
+D{i:127;locked:true}D{i:129;locked:true}D{i:130;locked:true}D{i:131;locked:true}D{i:135;locked:true}
+D{i:136;locked:true}D{i:137;locked:true}D{i:142;locked:true}D{i:143;locked:true}D{i:144;locked:true}
 D{i:145;locked:true}D{i:146;locked:true}D{i:147;locked:true}D{i:148;locked:true}D{i:149;locked:true}
-D{i:150;locked:true}D{i:151;locked:true}D{i:152;locked:true}D{i:155;locked:true}D{i:161;locked:true}
-D{i:162;locked:true}D{i:163;locked:true}D{i:164;locked:true}D{i:165;locked:true}D{i:167;locked:true}
-D{i:168;locked:true}D{i:169;locked:true}D{i:170;locked:true}D{i:171;locked:true}D{i:172;locked:true}
+D{i:150;locked:true}D{i:151;locked:true}D{i:152;locked:true}D{i:153;locked:true}D{i:154;locked:true}
+D{i:155;locked:true}D{i:158;locked:true}D{i:164;locked:true}D{i:165;locked:true}D{i:166;locked:true}
+D{i:167;locked:true}D{i:168;locked:true}D{i:170;locked:true}D{i:171;locked:true}D{i:172;locked:true}
 D{i:173;locked:true}D{i:174;locked:true}D{i:175;locked:true}D{i:176;locked:true}D{i:177;locked:true}
+D{i:178;locked:true}D{i:179;locked:true}D{i:180;locked:true}D{i:181;locked:true}
 }
 ##^##*/
 

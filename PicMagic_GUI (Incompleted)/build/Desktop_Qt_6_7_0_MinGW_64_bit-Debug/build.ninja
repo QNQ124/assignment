@@ -192,7 +192,7 @@ build all_qmllint_module: phony appFirst_GUI_qmllint_module
 #############################################
 # Utility command for appFirst_GUI_tooling
 
-build appFirst_GUI_tooling: phony First_GUI/AutoInfoBox.qml First_GUI/Main.qml First_GUI/assets/images/parots.bmp First_GUI/assets/images/House.bmp First_GUI/assets/images/gamma_adjusted_image.jpg First_GUI/assets/images/luffy.jpg First_GUI/assets/images/Monument+Grey.jpeg First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg First_GUI/assets/images/image.png First_GUI/assets/images/image1.png
+build appFirst_GUI_tooling: phony First_GUI/AutoInfoBox.qml First_GUI/Main.qml First_GUI/assets/images/parots.bmp First_GUI/assets/images/House.bmp First_GUI/assets/images/gamma_adjusted_image.jpg First_GUI/assets/images/luffy.jpg First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/temporary_file.jpg First_GUI/assets/images/image.png First_GUI/assets/images/image1.png First_GUI/assets/images/log.jpg
 
 
 #############################################
@@ -336,7 +336,7 @@ build .rcc/qmlcache/appFirst_GUI_Main_qml.cpp | ${cmake_ninja_workdir}.rcc/qmlca
 #############################################
 # Custom command for .rcc\qrc_appFirst_GUI_raw_qml_0.cpp
 
-build .rcc/qrc_appFirst_GUI_raw_qml_0.cpp | ${cmake_ninja_workdir}.rcc/qrc_appFirst_GUI_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/AutoInfoBox.qml C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/Main.qml C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/parots.bmp C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/House.bmp C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/gamma_adjusted_image.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/luffy.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/Monument+Grey.jpeg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg temporary_file.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/image.png C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/image1.png .rcc/appFirst_GUI_raw_qml_0.qrc D$:/Qt/6.7.0/mingw_64/./bin/rcc.exe || appFirst_GUI_autogen appFirst_GUI_autogen_timestamp_deps appFirst_GUI_qmlimportscan appFirst_GUI_tooling
+build .rcc/qrc_appFirst_GUI_raw_qml_0.cpp | ${cmake_ninja_workdir}.rcc/qrc_appFirst_GUI_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/AutoInfoBox.qml C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/Main.qml C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/parots.bmp C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/House.bmp C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/gamma_adjusted_image.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/luffy.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg temporary_file.jpg C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/image.png C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/image1.png C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/log.jpg .rcc/appFirst_GUI_raw_qml_0.qrc D$:/Qt/6.7.0/mingw_64/./bin/rcc.exe || appFirst_GUI_autogen appFirst_GUI_autogen_timestamp_deps appFirst_GUI_qmlimportscan appFirst_GUI_tooling
   COMMAND = cmd.exe /C "cd /D "C:\Users\Domain\OneDrive - techno mix\Documents\First_GUI\build\Desktop_Qt_6_7_0_MinGW_64_bit-Debug" && D:\Qt\6.7.0\mingw_64\.\bin\rcc.exe --output "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qrc_appFirst_GUI_raw_qml_0.cpp" --name appFirst_GUI_raw_qml_0 "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/appFirst_GUI_raw_qml_0.qrc" --no-zstd"
   DESC = Running rcc for resource appFirst_GUI_raw_qml_0
   restat = 1
@@ -443,15 +443,6 @@ build First_GUI/assets/images/luffy.jpg | ${cmake_ninja_workdir}First_GUI/assets
 
 
 #############################################
-# Custom command for First_GUI\assets\images\Monument+Grey.jpeg
-
-build First_GUI/assets/images/Monument+Grey.jpeg | ${cmake_ninja_workdir}First_GUI/assets/images/Monument+Grey.jpeg: CUSTOM_COMMAND C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/Monument+Grey.jpeg
-  COMMAND = cmd.exe /C "cd /D "C:\Users\Domain\OneDrive - techno mix\Documents\First_GUI" && D:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/assets/images/Monument+Grey.jpeg" "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/Monument+Grey.jpeg""
-  DESC = Copying assets/images/Monument+Grey.jpeg to C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/Monument+Grey.jpeg
-  restat = 1
-
-
-#############################################
 # Custom command for First_GUI\assets\images\abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg
 
 build First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg | ${cmake_ninja_workdir}First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg: CUSTOM_COMMAND C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/abstract-bp-initials-monogram-logo-design-icon-business-template-simple-elegant_619996-90.jpg
@@ -484,6 +475,15 @@ build First_GUI/assets/images/image.png | ${cmake_ninja_workdir}First_GUI/assets
 build First_GUI/assets/images/image1.png | ${cmake_ninja_workdir}First_GUI/assets/images/image1.png: CUSTOM_COMMAND C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/image1.png
   COMMAND = cmd.exe /C "cd /D "C:\Users\Domain\OneDrive - techno mix\Documents\First_GUI" && D:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/assets/images/image1.png" "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/image1.png""
   DESC = Copying assets/images/image1.png to C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/image1.png
+  restat = 1
+
+
+#############################################
+# Custom command for First_GUI\assets\images\log.jpg
+
+build First_GUI/assets/images/log.jpg | ${cmake_ninja_workdir}First_GUI/assets/images/log.jpg: CUSTOM_COMMAND C$:/Users/Domain/OneDrive$ -$ techno$ mix/Documents/First_GUI/assets/images/log.jpg
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Domain\OneDrive - techno mix\Documents\First_GUI" && D:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/assets/images/log.jpg" "C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/log.jpg""
+  DESC = Copying assets/images/log.jpg to C:/Users/Domain/OneDrive - techno mix/Documents/First_GUI/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/First_GUI/assets/images/log.jpg
   restat = 1
 
 
