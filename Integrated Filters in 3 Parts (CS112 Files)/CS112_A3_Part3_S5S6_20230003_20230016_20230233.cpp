@@ -10,15 +10,22 @@
 // Author:  Ibrahim Mohamed Saad Mohamed_S6_20230003 => Filter 1, 4, 7, 10, 13, 15      //
 //          Ahmed Hussein Mohamed Ahmed_S5_20230016  => Filter 2, 5, 8, 11, 14, 18      //
 //          Ezz eldin Omar Abd El-latif_S6_20230233  => Filter 3, 6, 9, 12, 16, 17      //
+//          TeamWork => Filter 19, 20                                                   //
 //                                                                                      //
 // Emails:  hes93314@gmail.com                                                          //
 //          hzrdu3500@gmail.com                                                         //
 //          ezzeldinomar7@gmail.com                                                     //
 //                                                                                      //
 // TA name: Rana Abdelkader                                                             //
-// Date:    4/14/2024                                                                   //
-// Version: 3.0                                                                         //
+// Date:    4/17/2024                                                                   //
+// Version: 4.0                                                                         //
 // ==================================================================================== //
+
+// ==================================================================================== //
+//              Gui Repository Link: https://github.com/QNQ124/PicMagic_Gui             //
+//           CS112 Files Repository Link: https://github.com/QNQ124/assignment          //
+// ==================================================================================== //
+
 
 // Include necessary libraries
 #include <iostream>
@@ -1438,7 +1445,7 @@ int Blur_Image(string filename){
 
     string blur_level1;
     Image photo(filename);
-    cout << "Please enter the blur level (1, 2, 3): ";
+    cout << "\nPlease enter the blur level (1, 2, 3): ";
     getline(cin, blur_level1);
 
     // Validate the blur level input
@@ -1675,28 +1682,24 @@ int OilPainting_Filter(string filename){
 
     // Set the radius of the painting effect
     int radius = 1;
-    int width = image.width;
     int height = image.height;
-    int intensity_levels = 10;
+    int width = image.width;
+    const int num_intensity_levels = 10;
 
-    // Apply the oil painting effect to the image
     for (int i = radius; i < width - radius; i++) {
         for (int j = radius; j < height - radius; j++) {
-            // Initialize vectors to store intensity count and average color values
-            vector<int> intensityCount(intensity_levels, 0);
-            vector<int> averageR(intensity_levels, 0);
-            vector<int> averageG(intensity_levels, 0);
-            vector<int> averageB(intensity_levels, 0);
+            int intensityCount[num_intensity_levels] = {0};
+            int averageR[num_intensity_levels] = {0};
+            int averageG[num_intensity_levels] = {0};
+            int averageB[num_intensity_levels] = {0};
 
-            // Compute intensity levels and update counts and averages
+            // Calculate the average intensity and color values for each pixel in the neighborhood
             for (int k = -radius; k <= radius; ++k) {
                 for (int l = -radius; l <= radius; ++l) {
-                    int r =  image.gp(i + k,j + l,0);
-                    int g =  image.gp(i + k,j + l,1);
-                    int b =  image.gp(i + k,j + l,2);
-                    int intensity = (((r+g+b)/3)* intensity_levels )/ 255;
-                    if( intensity > 255 )
-                        intensity = 255;
+                    int r = image.getPixel(i + k, j + l, 0);
+                    int g = image.getPixel(i + k, j + l, 1);
+                    int b = image.getPixel(i + k, j + l, 2);
+                    int intensity = (((r+g+b)/3)* num_intensity_levels )/ 255; // Use floating-point arithmetic for accuracy
                     int bin = intensity;
                     intensityCount[bin]++;
                     averageR[bin] += r;
@@ -1705,23 +1708,20 @@ int OilPainting_Filter(string filename){
                 }
             }
 
-            // Find the most frequent intensity level
+            // Find the intensity level with the maximum count
             int current_max = 0;
             int max_index = 0;
-            for( int nI = 0; nI < intensity_levels; nI++ )
-            {
-                if( intensityCount[nI] > current_max )
-                {
+            for (int nI = 0; nI < num_intensity_levels; nI++) {
+                if (intensityCount[nI] > current_max) {
                     current_max = intensityCount[nI];
                     max_index = nI;
                 }
             }
 
-            // Set the pixel to the average color of the most frequent intensity level
-            image(i ,j ,0) = averageR[max_index] / current_max;
-            image(i ,j ,1) = averageG[max_index] / current_max;
-            image(i ,j ,2) = averageB[max_index] / current_max;
-
+            // Set the pixel color to the average color of the most frequent intensity level
+            image(i, j, 0) = averageR[max_index] / current_max;
+            image(i, j, 1) = averageG[max_index] / current_max;
+            image(i, j, 2) = averageB[max_index] / current_max;
         }
     }
 
@@ -1787,11 +1787,10 @@ int Old_TV_Filter(string filename){
                 if ((j % 2) == 0){
                     // lighten pixel to simulate scanline
                     image(i, j, k) = image(i, j, k);
-                    image(i, j + 1, k) = image(i, j + 1, k);
                 }
                 else{
                     // Add random noise
-                    int noise = rand() % 56 - 10;       // random noise in [-45, 45]
+                    int noise = rand() % 56 - 10;       // random noise in [-10, 45]
                     int Value = image(i, j, k) + noise;
                     Value = min(255, max(0, Value));
                     image(i, j, k) = Value;
@@ -2204,7 +2203,7 @@ int Noise_Filter(string filename){
             for (int k = 0; k < photo.channels; k++) {
 
                 // Generate a random factor to multiply the pixel value by
-                double factor = 1.11 + (-1 * (rand() % 121) / 255.0);
+                double factor = 1.11 + (-1 * (rand() % 86) / 255.0);
                 int new_value = photo(i, j, k) * factor;
                 photo(i, j, k) = int(max(0, min(255, new_value))); // Check range of RGB and Modify it
 
